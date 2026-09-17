@@ -21,82 +21,330 @@
 >
 
 <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap"
     rel="stylesheet"
 >
 
+
 <style>
 
-/* =========================
-   COLORS
-========================= */
-
-:root {
-
-    --ivory: #f8f4eb;
-    --cream: #eee7d8;
-    --olive: #78806a;
-    --dark-olive: #505846;
-    --gold: #b69b63;
-    --text: #4d4a42;
-
-}
-
-
-/* =========================
-   RESET
-========================= */
+/* =====================================================
+   BASIC
+===================================================== */
 
 * {
-
     box-sizing: border-box;
-
     margin: 0;
-
     padding: 0;
-
 }
-
 
 html {
-
     scroll-behavior: smooth;
+}
+
+body {
+    background: #f8f4eb;
+    color: #4d4a42;
+    font-family: "Cormorant Garamond", serif;
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   LOCK THE PAGE BEFORE TAP TO OPEN
+===================================================== */
+
+body.locked {
+    overflow: hidden;
+    height: 100vh;
+    height: 100dvh;
+}
+
+
+/* =====================================================
+   OPENING SCREEN
+===================================================== */
+
+.hero {
+
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    /*
+       YOUR UPLOADED BACKGROUND IMAGE
+    */
+
+    background-image:
+        linear-gradient(
+            rgba(248, 244, 235, 0.08),
+            rgba(248, 244, 235, 0.08)
+        ),
+        url("opening-background.jpeg");
+
+    background-size: cover;
+
+    background-position: center center;
+
+    background-repeat: no-repeat;
 
 }
 
 
-body {
+/* =====================================================
+   SLIGHT OVERLAY
+   Keeps the text readable without changing
+   the actual image.
+===================================================== */
 
-    background: var(--ivory);
+.hero::before {
 
-    color: var(--text);
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,0.03),
+            rgba(255,255,255,0.03)
+        );
+
+    pointer-events: none;
+
+}
+
+
+/* =====================================================
+   HERO CONTENT
+===================================================== */
+
+.hero-inner {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 650px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+}
+
+
+/* =====================================================
+   MONOGRAM
+===================================================== */
+
+.monogram {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-bottom: 18px;
+
+}
+
+
+.monogram img {
+
+    width: 125px;
+
+    max-width: 32vw;
+
+    height: auto;
+
+    display: block;
+
+}
+
+
+/* =====================================================
+   SMALL TITLE
+===================================================== */
+
+.small-title {
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: #4f543e;
+
+    margin-bottom: 18px;
+
+}
+
+
+/* =====================================================
+   NAMES
+===================================================== */
+
+.names {
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: clamp(65px, 15vw, 105px);
+
+    line-height: 1;
+
+    color: #50563e;
+
+}
+
+
+.names span {
 
     font-family: "Cormorant Garamond", serif;
 
-    overflow-x: hidden;
+    font-size: .55em;
+
+    color: #b49a60;
+
+    margin: 0 5px;
 
 }
 
 
-/* =========================
-   LOCKED OPENING SCREEN
-========================= */
+/* =====================================================
+   GOLD LINE
+===================================================== */
 
-body.locked {
+.hero-line {
 
-    overflow: hidden;
+    width: 90px;
 
-    height: 100vh;
+    height: 1px;
 
-    height: 100dvh;
+    background: #b49a60;
+
+    margin: 20px auto;
 
 }
 
 
-/*
-   The entire invitation after the
-   opening screen is hidden initially.
-*/
+/* =====================================================
+   DATE
+===================================================== */
+
+.hero-date {
+
+    font-size: 22px;
+
+    letter-spacing: 2px;
+
+    color: #4f543e;
+
+    line-height: 1.4;
+
+}
+
+
+.hero-date strong {
+
+    font-weight: 600;
+
+}
+
+
+/* =====================================================
+   VERSE
+===================================================== */
+
+.hero-verse {
+
+    font-size: 19px;
+
+    font-style: italic;
+
+    line-height: 1.45;
+
+    max-width: 500px;
+
+    margin-top: 20px;
+
+    color: #555541;
+
+}
+
+
+.hero-verse em {
+
+    font-size: 16px;
+
+}
+
+
+/* =====================================================
+   TAP TO OPEN
+===================================================== */
+
+.open-button {
+
+    margin-top: 30px;
+
+    padding: 15px 38px;
+
+    background: rgba(248, 244, 235, 0.25);
+
+    border: 1px solid #50563e;
+
+    color: #50563e;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: all .3s ease;
+
+}
+
+
+.open-button:hover {
+
+    background: #50563e;
+
+    color: #fff;
+
+}
+
+
+/* =====================================================
+   HIDDEN INVITATION CONTENT
+===================================================== */
 
 #invitationContent {
 
@@ -108,10 +356,6 @@ body.locked {
 
 }
 
-
-/*
-   Revealed after Tap to Open
-*/
 
 #invitationContent.reveal {
 
@@ -143,9 +387,18 @@ body.locked {
 }
 
 
-/* =========================
-   CONTAINER
-========================= */
+/* =====================================================
+   GENERAL SECTIONS
+===================================================== */
+
+.section {
+
+    padding: 85px 20px;
+
+    text-align: center;
+
+}
+
 
 .container {
 
@@ -156,274 +409,28 @@ body.locked {
 }
 
 
-/* =========================
-   HERO
-========================= */
-
-.hero {
-
-    min-height: 100vh;
-
-    min-height: 100dvh;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-    position: relative;
-
-    padding: 60px 20px;
-
-    background:
-
-        radial-gradient(
-            circle at top,
-            rgba(182,155,99,.12),
-            transparent 35%
-        ),
-
-        linear-gradient(
-            180deg,
-            #faf7ef 0%,
-            #eee8da 100%
-        );
-
-}
-
-
-.hero-inner {
-
-    position: relative;
-
-    z-index: 2;
-
-    width: 100%;
-
-}
-
-
-/* =========================
-   BOTANICAL FS MONOGRAM
-========================= */
-
-.monogram {
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    margin: 0 auto 22px;
-
-}
-
-
-.monogram img {
-
-    width: 145px;
-
-    height: auto;
-
-    display: block;
-
-    object-fit: contain;
-
-}
-
-
-/* =========================
-   SMALL TEXT
-========================= */
-
-.small-title {
-
-    font-family: "Montserrat", sans-serif;
-
-    font-size: 14px;
-
-    font-weight: 700;
-
-    letter-spacing: 3px;
-
-    color: var(--olive);
-
-    text-transform: uppercase;
-
-    margin-bottom: 22px;
-
-}
-
-
-/* =========================
-   NAMES
-========================= */
-
-.names {
-
-    font-family: "Great Vibes", cursive;
-
-    font-size: clamp(65px, 16vw, 110px);
-
-    line-height: .95;
-
-    color: var(--dark-olive);
-
-}
-
-
-.names span {
-
-    color: var(--gold);
-
-    font-size: .65em;
-
-    margin: 0 5px;
-
-}
-
-
-/* =========================
-   HERO DATE
-========================= */
-
-.hero-line {
-
-    width: 100px;
-
-    height: 1px;
-
-    background: var(--gold);
-
-    margin: 25px auto;
-
-}
-
-
-.hero-date {
-
-    margin-top: 25px;
-
-    font-size: 22px;
-
-    letter-spacing: 2px;
-
-}
-
-
-.hero-date strong {
-
-    color: var(--olive);
-
-    font-weight: 700;
-
-}
-
-
-.hero-verse {
-
-    font-size: 20px;
-
-    font-style: italic;
-
-    line-height: 1.5;
-
-    max-width: 500px;
-
-    margin: 25px auto 0;
-
-}
-
-
-/* =========================
-   OPEN BUTTON
-========================= */
-
-.open-button {
-
-    display: inline-block;
-
-    margin-top: 38px;
-
-    padding: 15px 34px;
-
-    border: 1px solid var(--olive);
-
-    color: var(--dark-olive);
-
-    background: transparent;
-
-    text-decoration: none;
-
-    font-family: "Montserrat", sans-serif;
-
-    font-size: 13px;
-
-    font-weight: 700;
-
-    letter-spacing: 3px;
-
-    text-transform: uppercase;
-
-    cursor: pointer;
-
-    transition: .3s;
-
-}
-
-
-.open-button:hover {
-
-    background: var(--olive);
-
-    color: white;
-
-}
-
-
-/* =========================
-   GENERAL SECTIONS
-========================= */
-
-.section {
-
-    padding: 90px 20px;
-
-    text-align: center;
-
-}
-
-
-/* =========================
-   SECTION TITLE
-========================= */
+/* =====================================================
+   TITLES
+===================================================== */
 
 .section-title {
 
     font-family: "Montserrat", sans-serif;
 
-    font-size: 14px;
+    font-size: 13px;
 
-    font-weight: 700;
+    font-weight: 600;
 
     letter-spacing: 3px;
 
-    color: var(--olive);
-
     text-transform: uppercase;
 
-    margin-bottom: 20px;
+    color: #78806a;
+
+    margin-bottom: 18px;
 
 }
 
-
-/* =========================
-   SECTION HEADING
-========================= */
 
 .section-heading {
 
@@ -431,24 +438,22 @@ body.locked {
 
     font-size: 58px;
 
-    color: var(--dark-olive);
-
-    margin-bottom: 25px;
+    color: #50563e;
 
 }
 
 
-/* =========================
+/* =====================================================
    DIVIDER
-========================= */
+===================================================== */
 
 .divider {
 
     display: flex;
 
-    align-items: center;
-
     justify-content: center;
+
+    align-items: center;
 
     gap: 15px;
 
@@ -463,23 +468,23 @@ body.locked {
 
     height: 1px;
 
-    background: var(--gold);
+    background: #b49a60;
 
 }
 
 
 .divider b {
 
-    color: var(--gold);
+    color: #b49a60;
 
     font-size: 18px;
 
 }
 
 
-/* =========================
+/* =====================================================
    MESSAGE
-========================= */
+===================================================== */
 
 .message {
 
@@ -489,18 +494,18 @@ body.locked {
 
     font-size: 21px;
 
-    line-height: 1.65;
+    line-height: 1.6;
 
 }
 
 
-/* =========================
+/* =====================================================
    EVENTS
-========================= */
+===================================================== */
 
 .events {
 
-    background: var(--cream);
+    background: #eee7d8;
 
 }
 
@@ -522,7 +527,7 @@ body.locked {
 
     background: rgba(255,255,255,.55);
 
-    border: 1px solid rgba(120,128,106,.25);
+    border: 1px solid rgba(120,128,106,.3);
 
     padding: 35px 22px;
 
@@ -531,9 +536,9 @@ body.locked {
 
 .event-icon {
 
-    font-size: 30px;
+    color: #b49a60;
 
-    color: var(--gold);
+    font-size: 30px;
 
     margin-bottom: 15px;
 
@@ -542,11 +547,9 @@ body.locked {
 
 .event-card h3 {
 
-    font-size: 30px;
+    font-size: 29px;
 
-    font-weight: 700;
-
-    color: var(--dark-olive);
+    color: #50563e;
 
 }
 
@@ -555,31 +558,25 @@ body.locked {
 
     margin: 10px 0;
 
-    font-size: 20px;
+    font-size: 21px;
 
-    font-weight: 700;
+    font-weight: 600;
 
-    color: var(--gold);
+    color: #b49a60;
 
 }
 
 
 .event-place {
 
-    font-size: 21px;
+    font-size: 20px;
 
-    font-weight: 600;
+    font-weight: 500;
 
-    line-height: 1.4;
-
-    min-height: 60px;
+    line-height: 1.45;
 
 }
 
-
-/* =========================
-   MAP BUTTON
-========================= */
 
 .map-button {
 
@@ -587,34 +584,32 @@ body.locked {
 
     margin-top: 20px;
 
+    color: #78806a;
+
     text-decoration: none;
 
-    color: var(--olive);
-
-    border-bottom: 1px solid var(--gold);
+    border-bottom: 1px solid #b49a60;
 
     padding-bottom: 5px;
 
     font-family: "Montserrat", sans-serif;
 
-    font-size: 13px;
+    font-size: 11px;
 
-    font-weight: 700;
+    font-weight: 600;
 
     letter-spacing: 2px;
-
-    text-transform: uppercase;
 
 }
 
 
-/* =========================
+/* =====================================================
    COUNTDOWN
-========================= */
+===================================================== */
 
 .countdown-section {
 
-    background: var(--dark-olive);
+    background: #50563e;
 
     color: white;
 
@@ -623,7 +618,7 @@ body.locked {
 
 .countdown-section .section-title {
 
-    color: #e3d8bd;
+    color: #e0d5bb;
 
 }
 
@@ -657,9 +652,7 @@ body.locked {
 
 .count-number {
 
-    font-size: clamp(40px, 9vw, 62px);
-
-    font-weight: 400;
+    font-size: clamp(38px, 9vw, 60px);
 
     line-height: 1;
 
@@ -668,28 +661,28 @@ body.locked {
 
 .count-label {
 
+    margin-top: 10px;
+
     font-family: "Montserrat", sans-serif;
 
-    font-size: 12px;
+    font-size: 10px;
 
-    font-weight: 700;
+    font-weight: 600;
 
     letter-spacing: 2px;
 
     text-transform: uppercase;
 
-    margin-top: 12px;
-
 }
 
 
-/* =========================
+/* =====================================================
    RSVP
-========================= */
+===================================================== */
 
 .rsvp-section {
 
-    background: var(--ivory);
+    background: #f8f4eb;
 
 }
 
@@ -700,7 +693,7 @@ body.locked {
 
     margin: 40px auto 0;
 
-    padding: 40px 28px;
+    padding: 40px 25px;
 
     background: rgba(255,255,255,.65);
 
@@ -713,7 +706,7 @@ body.locked {
 
 .form-group {
 
-    margin-bottom: 32px;
+    margin-bottom: 30px;
 
 }
 
@@ -724,22 +717,18 @@ body.locked {
 
     font-family: "Montserrat", sans-serif;
 
-    font-size: 14px;
+    font-size: 12px;
 
-    font-weight: 700;
+    font-weight: 600;
 
     letter-spacing: 1.5px;
 
-    color: var(--dark-olive);
+    color: #50563e;
 
-    margin-bottom: 14px;
+    margin-bottom: 13px;
 
 }
 
-
-/* =========================
-   NAME FIELD
-========================= */
 
 input[type="text"] {
 
@@ -747,26 +736,20 @@ input[type="text"] {
 
     border: none;
 
-    border-bottom: 1px solid #bbb4a4;
+    border-bottom: 1px solid #aaa;
 
     background: transparent;
 
-    padding: 11px 4px;
+    padding: 10px 4px;
 
     font-family: "Cormorant Garamond", serif;
 
     font-size: 21px;
 
-    color: var(--text);
-
     outline: none;
 
 }
 
-
-/* =========================
-   RADIO BUTTONS
-========================= */
 
 .radio-group {
 
@@ -774,7 +757,7 @@ input[type="text"] {
 
     flex-direction: column;
 
-    gap: 14px;
+    gap: 13px;
 
 }
 
@@ -785,11 +768,9 @@ input[type="text"] {
 
     align-items: center;
 
-    gap: 11px;
+    gap: 10px;
 
-    font-size: 21px;
-
-    font-weight: 500;
+    font-size: 20px;
 
     cursor: pointer;
 
@@ -798,51 +779,42 @@ input[type="text"] {
 
 .radio-option input {
 
-    accent-color: var(--olive);
+    width: 17px;
 
-    width: 18px;
+    height: 17px;
 
-    height: 18px;
+    accent-color: #78806a;
 
 }
 
 
-/* =========================
-   SUBMIT
-========================= */
+/* =====================================================
+   RSVP BUTTON
+===================================================== */
 
 .submit-button {
 
     width: 100%;
 
-    border: 1px solid var(--olive);
+    padding: 16px;
 
-    background: var(--olive);
+    border: none;
+
+    background: #78806a;
 
     color: white;
 
-    padding: 17px;
-
     font-family: "Montserrat", sans-serif;
 
-    font-size: 13px;
+    font-size: 12px;
 
-    font-weight: 700;
+    font-weight: 600;
 
     letter-spacing: 3px;
 
     text-transform: uppercase;
 
     cursor: pointer;
-
-    transition: .3s;
-
-}
-
-
-.submit-button:hover {
-
-    background: var(--dark-olive);
 
 }
 
@@ -851,14 +823,12 @@ input[type="text"] {
 
     opacity: .7;
 
-    cursor: wait;
-
 }
 
 
-/* =========================
-   SUCCESS MESSAGE
-========================= */
+/* =====================================================
+   SUCCESS
+===================================================== */
 
 .success-message {
 
@@ -877,7 +847,7 @@ input[type="text"] {
 
     font-size: 48px;
 
-    color: var(--dark-olive);
+    color: #50563e;
 
     margin-bottom: 10px;
 
@@ -893,17 +863,17 @@ input[type="text"] {
 }
 
 
-/* =========================
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
 .footer {
 
     padding: 70px 20px;
 
-    background: var(--cream);
-
     text-align: center;
+
+    background: #eee7d8;
 
 }
 
@@ -914,73 +884,88 @@ input[type="text"] {
 
     font-size: 55px;
 
-    color: var(--dark-olive);
+    color: #50563e;
 
 }
 
 
 .footer-heart {
 
-    color: var(--gold);
+    color: #b49a60;
 
-    margin: 25px 0;
-
-    font-size: 20px;
+    margin: 20px 0;
 
 }
 
 
 .footer-date {
 
-    margin-top: 10px;
-
-    font-size: 19px;
-
-    font-weight: 700;
+    font-size: 17px;
 
     letter-spacing: 2px;
 
 }
 
 
-/* =========================
+/* =====================================================
    MOBILE
-========================= */
+===================================================== */
 
 @media (max-width: 650px) {
 
-    .section {
+    .hero {
 
-        padding: 70px 18px;
+        padding: 30px 18px;
+
+        background-position: center center;
 
     }
 
 
     .monogram img {
 
-        width: 125px;
+        width: 115px;
 
     }
 
 
     .small-title {
 
-        font-size: 12px;
+        font-size: 10px;
 
-        font-weight: 700;
-
-        letter-spacing: 2.5px;
+        letter-spacing: 2px;
 
     }
 
 
-    .section-title {
+    .names {
 
-        font-size: 12px;
+        font-size: 68px;
 
-        font-weight: 700;
+    }
 
-        letter-spacing: 2.5px;
+
+    .hero-date {
+
+        font-size: 19px;
+
+    }
+
+
+    .hero-verse {
+
+        font-size: 17px;
+
+        max-width: 340px;
+
+    }
+
+
+    .open-button {
+
+        margin-top: 25px;
+
+        padding: 14px 30px;
 
     }
 
@@ -992,45 +977,25 @@ input[type="text"] {
     }
 
 
-    .event-place {
+    .section-heading {
 
-        font-size: 20px;
-
-        font-weight: 600;
-
-    }
-
-
-    .map-button {
-
-        font-size: 12px;
-
-        font-weight: 700;
-
-    }
-
-
-    .countdown {
-
-        gap: 0;
+        font-size: 50px;
 
     }
 
 
     .count-number {
 
-        font-size: 38px;
+        font-size: 35px;
 
     }
 
 
     .count-label {
 
-        font-size: 10px;
+        font-size: 8px;
 
-        font-weight: 700;
-
-        letter-spacing: 2px;
+        letter-spacing: 1.5px;
 
     }
 
@@ -1041,71 +1006,39 @@ input[type="text"] {
 
     }
 
-
-    .form-label {
-
-        font-size: 12px;
-
-        font-weight: 700;
-
-    }
-
-
-    .section-heading {
-
-        font-size: 50px;
-
-    }
-
-
-    .message {
-
-        font-size: 19px;
-
-    }
-
-
-    .radio-option {
-
-        font-size: 19px;
-
-    }
-
 }
 
 
-/* =========================
-   VERY SMALL PHONES
-========================= */
+/* =====================================================
+   SMALL PHONES
+===================================================== */
 
 @media (max-width: 380px) {
 
     .monogram img {
 
-        width: 110px;
+        width: 100px;
 
     }
 
 
     .names {
 
-        font-size: 62px;
+        font-size: 60px;
 
     }
 
 
-    .count-number {
+    .hero-date {
 
-        font-size: 32px;
+        font-size: 17px;
 
     }
 
 
-    .count-label {
+    .hero-verse {
 
-        font-size: 9px;
-
-        letter-spacing: 1px;
+        font-size: 16px;
 
     }
 
@@ -1116,19 +1049,18 @@ input[type="text"] {
 </head>
 
 
+
 <body class="locked">
 
 
-<!-- =========================
-     HERO / OPENING SCREEN
-========================= -->
+<!-- =====================================================
+     FIRST SCREEN
+===================================================== -->
 
 <section class="hero">
 
     <div class="hero-inner">
 
-
-        <!-- MONOGRAM -->
 
         <div class="monogram">
 
@@ -1140,16 +1072,12 @@ input[type="text"] {
         </div>
 
 
-        <!-- SMALL TITLE -->
-
         <div class="small-title">
 
             Together with their families
 
         </div>
 
-
-        <!-- NAMES -->
 
         <div class="names">
 
@@ -1158,12 +1086,8 @@ input[type="text"] {
         </div>
 
 
-        <!-- LINE -->
-
         <div class="hero-line"></div>
 
-
-        <!-- DATE -->
 
         <div class="hero-date">
 
@@ -1176,8 +1100,6 @@ input[type="text"] {
         </div>
 
 
-        <!-- BIBLE VERSE -->
-
         <p class="hero-verse">
 
             “Therefore what God has joined together,
@@ -1189,8 +1111,6 @@ input[type="text"] {
 
         </p>
 
-
-        <!-- OPEN BUTTON -->
 
         <button
             type="button"
@@ -1210,15 +1130,16 @@ input[type="text"] {
 
 
 <!-- =====================================================
-     EVERYTHING BELOW IS HIDDEN UNTIL TAP TO OPEN
-====================================================== -->
+     INVITATION CONTENT
+     HIDDEN UNTIL TAP
+===================================================== -->
 
 <div id="invitationContent">
 
 
-<!-- =========================
+<!-- =====================================================
      WELCOME
-========================= -->
+===================================================== -->
 
 <section
     class="section"
@@ -1273,9 +1194,9 @@ input[type="text"] {
 
 
 
-<!-- =========================
-     LOCATIONS
-========================= -->
+<!-- =====================================================
+     EVENTS
+===================================================== -->
 
 <section class="section events">
 
@@ -1298,10 +1219,6 @@ input[type="text"] {
 
         <div class="event-grid">
 
-
-            <!-- =========================
-                 CHURCH
-            ========================= -->
 
             <div class="event-card">
 
@@ -1345,14 +1262,9 @@ input[type="text"] {
 
                 </a>
 
-
             </div>
 
 
-
-            <!-- =========================
-                 RECEPTION
-            ========================= -->
 
             <div class="event-card">
 
@@ -1396,12 +1308,10 @@ input[type="text"] {
 
                 </a>
 
-
             </div>
 
 
         </div>
-
 
     </div>
 
@@ -1409,9 +1319,9 @@ input[type="text"] {
 
 
 
-<!-- =========================
+<!-- =====================================================
      COUNTDOWN
-========================= -->
+===================================================== -->
 
 <section class="section countdown-section">
 
@@ -1435,8 +1345,6 @@ input[type="text"] {
         <div class="countdown">
 
 
-            <!-- DAYS -->
-
             <div class="count-box">
 
                 <div
@@ -1448,7 +1356,6 @@ input[type="text"] {
 
                 </div>
 
-
                 <div class="count-label">
 
                     Days
@@ -1457,9 +1364,6 @@ input[type="text"] {
 
             </div>
 
-
-
-            <!-- HOURS -->
 
             <div class="count-box">
 
@@ -1472,7 +1376,6 @@ input[type="text"] {
 
                 </div>
 
-
                 <div class="count-label">
 
                     Hours
@@ -1481,9 +1384,6 @@ input[type="text"] {
 
             </div>
 
-
-
-            <!-- MINUTES -->
 
             <div class="count-box">
 
@@ -1496,7 +1396,6 @@ input[type="text"] {
 
                 </div>
 
-
                 <div class="count-label">
 
                     Minutes
@@ -1505,9 +1404,6 @@ input[type="text"] {
 
             </div>
 
-
-
-            <!-- SECONDS -->
 
             <div class="count-box">
 
@@ -1520,7 +1416,6 @@ input[type="text"] {
 
                 </div>
 
-
                 <div class="count-label">
 
                     Seconds
@@ -1532,16 +1427,15 @@ input[type="text"] {
 
         </div>
 
-
     </div>
 
 </section>
 
 
 
-<!-- =========================
+<!-- =====================================================
      RSVP
-========================= -->
+===================================================== -->
 
 <section
     class="section rsvp-section"
@@ -1553,7 +1447,7 @@ input[type="text"] {
 
         <div class="section-title">
 
-            Kindly respond
+            Kindly Respond
 
         </div>
 
@@ -1567,8 +1461,8 @@ input[type="text"] {
 
         <p class="message">
 
-            We would love to know if you'll be
-            joining us on our special day. ❤️
+            Your presence would make our celebration
+            even more special. 🤍
 
         </p>
 
@@ -1584,9 +1478,7 @@ input[type="text"] {
             >
 
 
-                <!-- =========================
-                     NAME
-                ========================= -->
+                <!-- NAME -->
 
                 <div class="form-group">
 
@@ -1608,9 +1500,7 @@ input[type="text"] {
 
 
 
-                <!-- =========================
-                     TEAM
-                ========================= -->
+                <!-- TEAM -->
 
                 <div class="form-group">
 
@@ -1638,7 +1528,6 @@ input[type="text"] {
                         </label>
 
 
-
                         <label class="radio-option">
 
                             <input
@@ -1658,9 +1547,7 @@ input[type="text"] {
 
 
 
-                <!-- =========================
-                     ATTENDANCE
-                ========================= -->
+                <!-- ATTENDANCE -->
 
                 <div class="form-group">
 
@@ -1688,7 +1575,6 @@ input[type="text"] {
                         </label>
 
 
-
                         <label class="radio-option">
 
                             <input
@@ -1708,10 +1594,6 @@ input[type="text"] {
 
 
 
-                <!-- =========================
-                     SUBMIT
-                ========================= -->
-
                 <button
                     type="submit"
                     class="submit-button"
@@ -1727,9 +1609,7 @@ input[type="text"] {
 
 
 
-            <!-- =========================
-                 SUCCESS MESSAGE
-            ========================= -->
+            <!-- SUCCESS -->
 
             <div
                 class="success-message"
@@ -1753,7 +1633,6 @@ input[type="text"] {
 
                 </p>
 
-
             </div>
 
 
@@ -1766,9 +1645,9 @@ input[type="text"] {
 
 
 
-<!-- =========================
-     HIDDEN FORM FRAME
-========================= -->
+<!-- =====================================================
+     HIDDEN GOOGLE FORM FRAME
+===================================================== -->
 
 <iframe
     name="hiddenFrame"
@@ -1778,12 +1657,11 @@ input[type="text"] {
 
 
 
-<!-- =========================
+<!-- =====================================================
      FOOTER
-========================= -->
+===================================================== -->
 
 <footer class="footer">
-
 
     <div class="footer-names">
 
@@ -1805,17 +1683,14 @@ input[type="text"] {
 
     </div>
 
-
 </footer>
 
 
 </div>
-<!-- END INVITATION CONTENT -->
 
 
 
 <script>
-
 
 /* =====================================================
    TAP TO OPEN
@@ -1831,44 +1706,30 @@ const invitationContent =
 
 openInvitation.addEventListener(
     "click",
-    function() {
+    function () {
 
 
-        /*
-           Unlock the page
-        */
+        /* Unlock page */
 
         document.body.classList.remove("locked");
 
 
-        /*
-           Make the hidden invitation visible
-        */
+        /* Show invitation */
 
         invitationContent.style.display = "block";
 
 
-        /*
-           Wait one frame so the browser
-           registers the newly visible content
-        */
-
-        requestAnimationFrame(function() {
+        requestAnimationFrame(function () {
 
 
-            /*
-               Start the reveal animation
-            */
+            /* Start reveal animation */
 
             invitationContent.classList.add("reveal");
 
 
-            /*
-               Then smoothly move to the
-               beginning of the invitation
-            */
+            /* Scroll smoothly to welcome */
 
-            setTimeout(function() {
+            setTimeout(function () {
 
                 document
                     .getElementById("welcome")
@@ -1882,7 +1743,6 @@ openInvitation.addEventListener(
 
         });
 
-
     }
 );
 
@@ -1893,11 +1753,9 @@ openInvitation.addEventListener(
 ===================================================== */
 
 const weddingDate =
-
     new Date(
         "2026-10-10T18:00:00+03:00"
     ).getTime();
-
 
 
 function updateCountdown() {
@@ -1911,52 +1769,29 @@ function updateCountdown() {
         weddingDate - now;
 
 
-    /*
-       If wedding date has arrived
-    */
-
     if (distance <= 0) {
 
+        document.getElementById("days").innerText = "00";
 
-        document.getElementById("days").innerText =
-            "00";
+        document.getElementById("hours").innerText = "00";
 
+        document.getElementById("minutes").innerText = "00";
 
-        document.getElementById("hours").innerText =
-            "00";
-
-
-        document.getElementById("minutes").innerText =
-            "00";
-
-
-        document.getElementById("seconds").innerText =
-            "00";
-
+        document.getElementById("seconds").innerText = "00";
 
         return;
 
     }
 
 
-    /*
-       Calculate days
-    */
-
     const days =
-
         Math.floor(
             distance /
             (1000 * 60 * 60 * 24)
         );
 
 
-    /*
-       Calculate hours
-    */
-
     const hours =
-
         Math.floor(
             (
                 distance %
@@ -1967,12 +1802,7 @@ function updateCountdown() {
         );
 
 
-    /*
-       Calculate minutes
-    */
-
     const minutes =
-
         Math.floor(
             (
                 distance %
@@ -1983,12 +1813,7 @@ function updateCountdown() {
         );
 
 
-    /*
-       Calculate seconds
-    */
-
     const seconds =
-
         Math.floor(
             (
                 distance %
@@ -1999,43 +1824,25 @@ function updateCountdown() {
         );
 
 
-    /*
-       Display countdown
-    */
-
     document.getElementById("days").innerText =
-
         String(days).padStart(2, "0");
 
 
     document.getElementById("hours").innerText =
-
         String(hours).padStart(2, "0");
 
 
     document.getElementById("minutes").innerText =
-
         String(minutes).padStart(2, "0");
 
 
     document.getElementById("seconds").innerText =
-
         String(seconds).padStart(2, "0");
-
 
 }
 
 
-/*
-   Start countdown immediately
-*/
-
 updateCountdown();
-
-
-/*
-   Update every second
-*/
 
 setInterval(
     updateCountdown,
@@ -2052,57 +1859,34 @@ const form =
     document.getElementById("rsvpForm");
 
 
-const button =
+const submitButton =
     document.getElementById("submitButton");
 
 
-const success =
+const successMessage =
     document.getElementById("successMessage");
-
 
 
 form.addEventListener(
     "submit",
-    function() {
+    function () {
 
 
-        /*
-           Disable button
-        */
+        submitButton.disabled = true;
 
-        button.disabled = true;
-
-
-        /*
-           Change button text
-        */
-
-        button.innerText =
+        submitButton.innerText =
             "Sending...";
 
 
-        /*
-           Give Google Apps Script
-           time to receive the form
-        */
-
         setTimeout(
-            function() {
+            function () {
 
-
-                /*
-                   Hide form
-                */
 
                 form.style.display =
                     "none";
 
 
-                /*
-                   Show thank-you message
-                */
-
-                success.style.display =
+                successMessage.style.display =
                     "block";
 
 
@@ -2110,10 +1894,8 @@ form.addEventListener(
             1200
         );
 
-
     }
 );
-
 
 </script>
 
