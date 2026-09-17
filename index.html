@@ -9,9 +9,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
+
+/* =========================================================
+   BASIC
+========================================================= */
 
 * {
     box-sizing: border-box;
@@ -24,9 +28,9 @@ html {
 }
 
 body {
-    font-family: "Cormorant Garamond", serif;
-    background: #f8f4eb;
+    background: #f7f2e8;
     color: #59634f;
+    font-family: "Cormorant Garamond", serif;
 }
 
 body.locked {
@@ -34,9 +38,9 @@ body.locked {
 }
 
 
-/* =====================================================
+/* =========================================================
    FRONT COVER
-===================================================== */
+========================================================= */
 
 .hero {
     width: 100%;
@@ -46,16 +50,13 @@ body.locked {
     position: relative;
 
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
-    background: #f8f4eb;
+    background: #f7f2e8;
 
     overflow: hidden;
 }
-
-
-/* ORIGINAL BACKGROUND IMAGE */
 
 .hero-image {
     position: absolute;
@@ -64,27 +65,22 @@ body.locked {
     height: 100%;
 
     object-fit: contain;
-    object-position: center center;
-
-    display: block;
+    object-position: center;
 
     z-index: 1;
 }
-
-
-/* VERY LIGHT OVERLAY */
 
 .hero-overlay {
     position: absolute;
     inset: 0;
 
-    background: rgba(248, 244, 235, 0.02);
+    background: rgba(247,242,232,0.02);
 
     z-index: 2;
 }
 
 
-/* NAMES ON FRONT */
+/* COVER NAMES */
 
 .cover-names {
     position: absolute;
@@ -94,27 +90,24 @@ body.locked {
 
     transform: translate(-50%, -50%);
 
-    z-index: 4;
-
-    width: 90%;
+    width: 94%;
 
     text-align: center;
 
     font-family: "Great Vibes", cursive;
 
-    font-size: clamp(60px, 11vw, 110px);
+    font-size: clamp(55px, 12vw, 110px);
 
-    font-weight: 400;
-
-    line-height: 1.05;
+    line-height: 1;
 
     color: #59634f;
 
-    text-shadow:
-        0 1px 1px rgba(255,255,255,0.7),
-        0 3px 10px rgba(0,0,0,0.08);
+    z-index: 4;
 
     white-space: nowrap;
+
+    text-shadow:
+        0 2px 5px rgba(255,255,255,0.7);
 }
 
 
@@ -124,44 +117,37 @@ body.locked {
     position: absolute;
 
     left: 50%;
-    bottom: 9%;
+    bottom: 7%;
 
     transform: translateX(-50%);
 
     z-index: 5;
 
-    padding: 12px 32px;
+    padding: 12px 30px;
 
-    border: 1px solid rgba(89, 99, 79, 0.65);
+    border: 1px solid rgba(89,99,79,0.65);
 
-    border-radius: 40px;
+    border-radius: 50px;
 
-    background: rgba(248, 244, 235, 0.9);
+    background: rgba(250,247,239,0.92);
 
     color: #59634f;
 
     font-family: "Cormorant Garamond", serif;
 
-    font-size: 19px;
+    font-size: 18px;
 
     letter-spacing: 2px;
 
     cursor: pointer;
 
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-
-    transition: all 0.3s ease;
-}
-
-.open-button:hover {
-    background: #59634f;
-    color: white;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
 }
 
 
-/* =====================================================
-   INVITATION CONTENT
-===================================================== */
+/* =========================================================
+   INVITATION
+========================================================= */
 
 #invitationContent {
     display: none;
@@ -172,272 +158,475 @@ body.locked {
 }
 
 
-/* =====================================================
-   WELCOME
-===================================================== */
+/* =========================================================
+   PORTRAIT WELCOME
+========================================================= */
 
 .welcome {
     min-height: 100vh;
+    min-height: 100dvh;
+
+    padding: 70px 25px;
 
     display: flex;
     flex-direction: column;
+
     justify-content: center;
     align-items: center;
 
     text-align: center;
 
-    padding: 60px 25px;
+    position: relative;
 
-    background: #f8f4eb;
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(255,255,255,0.65),
+            transparent 45%
+        ),
+        #f7f2e8;
 }
+
+.welcome::before,
+.welcome::after {
+    content: "";
+
+    position: absolute;
+
+    left: 12%;
+    right: 12%;
+
+    height: 1px;
+
+    background: rgba(89,99,79,0.25);
+}
+
+.welcome::before {
+    top: 45px;
+}
+
+.welcome::after {
+    bottom: 45px;
+}
+
 
 .monogram {
-    width: 130px;
-    max-width: 40vw;
+    width: 115px;
 
-    margin-bottom: 25px;
+    max-width: 45vw;
+
+    margin-bottom: 30px;
 }
 
+
 .welcome-small {
-    font-size: 18px;
+    font-size: 16px;
 
     letter-spacing: 3px;
 
     text-transform: uppercase;
 
-    margin-bottom: 12px;
+    margin-bottom: 15px;
 }
+
 
 .names {
     font-family: "Great Vibes", cursive;
 
-    font-size: clamp(55px, 12vw, 100px);
+    font-size: 72px;
+
+    line-height: 1;
+
+    color: #59634f;
+}
+
+
+.welcome-date {
+    margin-top: 28px;
+
+    font-size: 21px;
+
+    letter-spacing: 4px;
+}
+
+
+/* =========================================================
+   DECORATIVE DIVIDER
+========================================================= */
+
+.divider {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin: 30px auto;
+}
+
+.divider-line {
+    width: 55px;
+
+    height: 1px;
+
+    background: rgba(89,99,79,0.35);
+}
+
+.divider-symbol {
+    font-size: 16px;
+
+    color: #7b806d;
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.message-section {
+    min-height: 70vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 70px 28px;
+
+    background: #eeeadf;
+}
+
+
+.script-title {
+    font-family: "Great Vibes", cursive;
+
+    font-size: 58px;
 
     font-weight: 400;
 
     color: #59634f;
 
-    line-height: 1;
-}
-
-.welcome-date {
-    margin-top: 25px;
-
-    font-size: 23px;
-
-    letter-spacing: 3px;
+    margin-bottom: 20px;
 }
 
 
-/* =====================================================
-   GENERAL SECTIONS
-===================================================== */
+.message-text {
+    max-width: 520px;
 
-.section {
-    padding: 80px 22px;
+    font-size: 20px;
+
+    line-height: 1.8;
+
+    color: #62695a;
+}
+
+
+/* =========================================================
+   EVENT SECTIONS
+========================================================= */
+
+.event-section {
+    padding: 75px 22px;
 
     text-align: center;
 
-    max-width: 850px;
-
-    margin: auto;
+    background: #f7f2e8;
 }
 
-.section-title {
+
+.event-label {
+    font-size: 14px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 12px;
+
+    color: #777e6c;
+}
+
+
+.event-title {
     font-family: "Great Vibes", cursive;
 
     font-size: 55px;
 
-    color: #59634f;
+    font-weight: 400;
 
     margin-bottom: 25px;
 }
 
-.section-text {
-    font-size: 20px;
 
-    line-height: 1.7;
-}
+.event-card {
+    max-width: 520px;
 
-
-/* =====================================================
-   DETAILS
-===================================================== */
-
-.details-card {
-    background: rgba(255,255,255,0.45);
-
-    border: 1px solid rgba(89,99,79,0.25);
-
-    border-radius: 20px;
+    margin: auto;
 
     padding: 35px 25px;
 
-    margin: 20px auto;
+    border: 1px solid rgba(89,99,79,0.25);
 
-    max-width: 600px;
+    background: rgba(255,255,255,0.38);
+
+    position: relative;
 }
 
-.details-card h3 {
+
+.event-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 8px;
+
+    border: 1px solid rgba(89,99,79,0.12);
+
+    pointer-events: none;
+}
+
+
+.event-icon {
+    font-size: 28px;
+
+    margin-bottom: 15px;
+}
+
+
+.event-card h3 {
     font-size: 28px;
 
     font-weight: 600;
 
-    margin-bottom: 10px;
+    margin-bottom: 18px;
 }
 
-.details-card p {
-    font-size: 20px;
 
-    line-height: 1.6;
+.event-card p {
+    font-size: 19px;
+
+    line-height: 1.75;
+
+    margin-bottom: 20px;
 }
+
+
+/* =========================================================
+   MAP BUTTON
+========================================================= */
 
 .map-button {
     display: inline-block;
 
-    margin-top: 18px;
-
-    padding: 10px 24px;
+    padding: 11px 25px;
 
     border-radius: 30px;
 
     background: #59634f;
 
-    color: white;
+    color: #fff;
 
     text-decoration: none;
 
-    font-size: 17px;
+    font-size: 16px;
 
     letter-spacing: 1px;
+
+    position: relative;
+
+    z-index: 2;
 }
 
 
-/* =====================================================
+/* =========================================================
    COUNTDOWN
-===================================================== */
+========================================================= */
+
+.countdown-section {
+    padding: 80px 20px;
+
+    text-align: center;
+
+    background: #e6e3d8;
+}
+
+
+.countdown-title {
+    font-family: "Great Vibes", cursive;
+
+    font-size: 58px;
+
+    margin-bottom: 10px;
+}
+
+
+.countdown-subtitle {
+    font-size: 18px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 30px;
+}
+
 
 .countdown {
-    display: flex;
+    display: grid;
 
-    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
 
-    gap: 15px;
+    gap: 12px;
 
-    flex-wrap: wrap;
+    max-width: 400px;
 
-    margin-top: 30px;
+    margin: auto;
 }
+
 
 .time-box {
-    min-width: 75px;
-
-    padding: 15px 10px;
-
-    border: 1px solid rgba(89,99,79,0.3);
-
-    border-radius: 15px;
+    padding: 20px 10px;
 
     background: rgba(255,255,255,0.45);
+
+    border: 1px solid rgba(89,99,79,0.2);
 }
+
 
 .time-number {
     display: block;
 
-    font-size: 30px;
+    font-size: 34px;
 
     font-weight: 600;
 }
 
-.time-label {
-    font-size: 14px;
 
-    letter-spacing: 1px;
+.time-label {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
 
     text-transform: uppercase;
 }
 
 
-/* =====================================================
+/* =========================================================
    RSVP
-===================================================== */
+========================================================= */
 
-.rsvp {
+.rsvp-section {
     padding: 80px 22px;
 
-    background: #eeeadf;
+    background: #f7f2e8;
 
     text-align: center;
 }
 
+
+.rsvp-title {
+    font-family: "Great Vibes", cursive;
+
+    font-size: 60px;
+
+    margin-bottom: 8px;
+}
+
+
+.rsvp-intro {
+    font-size: 18px;
+
+    margin-bottom: 35px;
+}
+
+
 .rsvp-form {
-    max-width: 600px;
+    max-width: 500px;
 
     margin: auto;
 
     text-align: left;
 }
 
+
 .form-group {
-    margin-bottom: 25px;
+    margin-bottom: 27px;
 }
 
-.form-group label {
+
+.form-group > label:first-child {
     display: block;
 
-    font-size: 20px;
+    font-size: 19px;
 
     margin-bottom: 10px;
 }
+
 
 .form-group input[type="text"] {
     width: 100%;
 
     padding: 14px 16px;
 
-    border: 1px solid rgba(89,99,79,0.35);
+    border: 1px solid rgba(89,99,79,0.3);
 
-    border-radius: 10px;
+    border-radius: 5px;
 
-    background: white;
+    background: rgba(255,255,255,0.65);
 
     font-family: inherit;
 
     font-size: 18px;
+
+    color: #59634f;
+
+    outline: none;
 }
+
 
 .option {
     display: block;
 
-    padding: 12px 15px;
+    padding: 13px 15px;
 
     margin: 8px 0;
 
-    border: 1px solid rgba(89,99,79,0.25);
+    border: 1px solid rgba(89,99,79,0.2);
 
-    border-radius: 10px;
+    border-radius: 5px;
 
-    background: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.4);
 
     font-size: 18px;
 
     cursor: pointer;
 }
 
+
 .option input {
-    margin-right: 10px;
+    margin-right: 8px;
 }
+
 
 .submit-button {
     display: block;
 
-    margin: 30px auto 0;
+    margin: 35px auto 0;
 
-    padding: 13px 40px;
+    padding: 13px 35px;
 
     border: none;
 
-    border-radius: 30px;
+    border-radius: 40px;
 
     background: #59634f;
 
@@ -445,142 +634,147 @@ body.locked {
 
     font-family: inherit;
 
-    font-size: 19px;
+    font-size: 18px;
+
+    letter-spacing: 1px;
 
     cursor: pointer;
 }
 
+
 .thank-you {
     display: none;
 
+    margin-top: 30px;
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: 36px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   FINAL SECTION
+========================================================= */
+
+.final-section {
+    min-height: 55vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
     text-align: center;
 
+    padding: 60px 25px;
+
+    background: #eeeadf;
+}
+
+
+.final-names {
+    font-family: "Great Vibes", cursive;
+
+    font-size: 65px;
+
+    margin-bottom: 15px;
+}
+
+
+.final-date {
+    font-size: 18px;
+
+    letter-spacing: 4px;
+}
+
+
+.final-heart {
     margin-top: 25px;
 
-    font-size: 23px;
-
-    color: #59634f;
+    font-size: 22px;
 }
 
 
-/* =====================================================
+/* =========================================================
    FOOTER
-===================================================== */
+========================================================= */
 
 footer {
-    padding: 40px 20px;
+    padding: 30px 20px;
 
     text-align: center;
 
-    background: #f8f4eb;
+    font-size: 16px;
 
-    font-size: 17px;
+    background: #f7f2e8;
+
+    color: #727967;
 }
 
 
-/* =====================================================
-   MOBILE
-===================================================== */
+/* =========================================================
+   SMALL PHONES
+========================================================= */
 
-@media (max-width: 650px) {
-
-    .hero {
-        height: 100dvh;
-        min-height: 100dvh;
-
-        background: #f8f4eb;
-    }
-
-
-    .hero-image {
-        width: 100%;
-        height: 100%;
-
-        object-fit: contain;
-
-        object-position: center center;
-    }
-
-
-    /* FRONT NAMES */
+@media (max-width: 390px) {
 
     .cover-names {
-        font-size: 64px;
-
-        width: 95%;
-
-        top: 50%;
+        font-size: 56px;
     }
-
-
-    /* OPEN BUTTON */
-
-    .open-button {
-        bottom: 6%;
-
-        padding: 11px 28px;
-
-        font-size: 17px;
-    }
-
-
-    .monogram {
-        width: 105px;
-    }
-
-
-    .welcome-small {
-        font-size: 15px;
-    }
-
 
     .names {
-        font-size: 65px;
+        font-size: 62px;
     }
 
-
-    .welcome-date {
-        font-size: 19px;
+    .script-title {
+        font-size: 52px;
     }
 
-
-    .section {
-        padding: 65px 20px;
+    .event-title {
+        font-size: 50px;
     }
 
-
-    .section-title {
-        font-size: 48px;
+    .countdown-title {
+        font-size: 52px;
     }
 
+}
 
-    .section-text {
-        font-size: 18px;
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 800px) {
+
+    .welcome {
+        max-width: 900px;
+
+        margin: auto;
     }
 
+    .message-section {
+        max-width: 900px;
 
-    .details-card {
-        padding: 28px 18px;
+        margin: auto;
     }
 
+    .event-section {
+        max-width: 900px;
 
-    .details-card h3 {
-        font-size: 25px;
+        margin: auto;
     }
 
+    .rsvp-section {
+        max-width: 900px;
 
-    .details-card p {
-        font-size: 18px;
-    }
-
-
-    .time-box {
-        min-width: 68px;
-    }
-
-
-    .time-number {
-        font-size: 26px;
+        margin: auto;
     }
 
 }
@@ -592,30 +786,26 @@ footer {
 <body class="locked">
 
 
-<!-- =====================================================
+<!-- =========================================================
      FRONT COVER
-===================================================== -->
+========================================================= -->
 
 <section class="hero" id="cover">
 
-    <!-- YOUR EXACT IMAGE -->
     <img
         src="./opening-background.jpeg"
         alt=""
         class="hero-image"
     >
 
-
     <div class="hero-overlay"></div>
 
 
-    <!-- ONLY NAMES -->
     <div class="cover-names">
         Fady &amp; Sarah
     </div>
 
 
-    <!-- TAP TO OPEN -->
     <button
         class="open-button"
         id="openInvitation"
@@ -628,379 +818,452 @@ footer {
 
 
 
-<!-- =====================================================
-     FULL INVITATION
-===================================================== -->
+<!-- =========================================================
+     FULL PORTRAIT INVITATION
+========================================================= -->
 
 <div id="invitationContent">
 
 
-    <!-- WELCOME -->
+<!-- WELCOME -->
 
-    <section class="welcome" id="welcome">
+<section class="welcome" id="welcome">
 
-        <img
-            src="./monogram.png"
-            alt="Fady & Sarah"
-            class="monogram"
-        >
+    <img
+        src="./monogram.png"
+        alt="Fady & Sarah"
+        class="monogram"
+    >
 
-        <div class="welcome-small">
-            Together with their families
+    <div class="welcome-small">
+        Together with their families
+    </div>
+
+    <div class="names">
+        Fady &amp; Sarah
+    </div>
+
+    <div class="divider">
+
+        <span class="divider-line"></span>
+
+        <span class="divider-symbol">✦</span>
+
+        <span class="divider-line"></span>
+
+    </div>
+
+    <div class="welcome-date">
+        10 · 10 · 2026
+    </div>
+
+</section>
+
+
+
+<!-- MESSAGE -->
+
+<section class="message-section">
+
+    <h2 class="script-title">
+        With Love
+    </h2>
+
+    <div class="divider">
+
+        <span class="divider-line"></span>
+
+        <span class="divider-symbol">♡</span>
+
+        <span class="divider-line"></span>
+
+    </div>
+
+    <p class="message-text">
+
+        We are so excited to celebrate
+        this beautiful beginning
+        surrounded by the people we love.
+
+        <br><br>
+
+        Your presence would mean so much to us.
+
+    </p>
+
+</section>
+
+
+
+<!-- CEREMONY -->
+
+<section class="event-section">
+
+    <div class="event-label">
+        Join us for
+    </div>
+
+    <h2 class="event-title">
+        The Ceremony
+    </h2>
+
+    <div class="event-card">
+
+        <div class="event-icon">
+            ♡
         </div>
 
-        <div class="names">
-            Fady &amp; Sarah
-        </div>
+        <h3>
+            Church Ceremony
+        </h3>
 
-        <div class="welcome-date">
-            10 · 10 · 2026
-        </div>
+        <p>
 
-    </section>
+            Saturday, 10 October 2026
 
+            <br>
 
-
-    <!-- MESSAGE -->
-
-    <section class="section">
-
-        <h2 class="section-title">
-            With Love
-        </h2>
-
-        <p class="section-text">
-
-            We are so excited to celebrate this beautiful beginning
-            surrounded by the people we love.
+            6:00 PM
 
             <br><br>
 
-            Your presence would mean so much to us.
+            St. Mary &amp; St. Athanasius Church
+
+            <br>
+
+            Nasr City
 
         </p>
 
-    </section>
-
-
-
-    <!-- CEREMONY -->
-
-    <section class="section">
-
-        <h2 class="section-title">
-            The Ceremony
-        </h2>
-
-        <div class="details-card">
-
-            <h3>
-                Church Ceremony
-            </h3>
-
-            <p>
-
-                Saturday, 10 October 2026
-
-                <br>
-
-                6:00 PM
-
-                <br><br>
-
-                St. Mary &amp; St. Athanasius Church
-
-                <br>
-
-                Nasr City
-
-            </p>
-
-            <a
-                href="https://maps.app.goo.gl/Aog3oVXVGiwb47Cz9?g_st=iw"
-                target="_blank"
-                class="map-button"
-            >
-                Open in Maps
-            </a>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- RECEPTION -->
-
-    <section class="section">
-
-        <h2 class="section-title">
-            The Celebration
-        </h2>
-
-        <div class="details-card">
-
-            <h3>
-                Wedding Reception
-            </h3>
-
-            <p>
-
-                Saturday, 10 October 2026
-
-                <br>
-
-                7:30 PM
-
-                <br><br>
-
-                Le Meridien Hotel
-
-                <br>
-
-                Cairo Airport
-
-            </p>
-
-            <a
-                href="https://maps.app.goo.gl/ARrpiHBE5yC5Y9dr8?g_st=iw"
-                target="_blank"
-                class="map-button"
-            >
-                Open in Maps
-            </a>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- COUNTDOWN -->
-
-    <section class="section">
-
-        <h2 class="section-title">
-            Counting Down
-        </h2>
-
-        <div class="countdown">
-
-            <div class="time-box">
-
-                <span
-                    class="time-number"
-                    id="days"
-                >
-                    0
-                </span>
-
-                <span class="time-label">
-                    Days
-                </span>
-
-            </div>
-
-
-            <div class="time-box">
-
-                <span
-                    class="time-number"
-                    id="hours"
-                >
-                    0
-                </span>
-
-                <span class="time-label">
-                    Hours
-                </span>
-
-            </div>
-
-
-            <div class="time-box">
-
-                <span
-                    class="time-number"
-                    id="minutes"
-                >
-                    0
-                </span>
-
-                <span class="time-label">
-                    Minutes
-                </span>
-
-            </div>
-
-
-            <div class="time-box">
-
-                <span
-                    class="time-number"
-                    id="seconds"
-                >
-                    0
-                </span>
-
-                <span class="time-label">
-                    Seconds
-                </span>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- RSVP -->
-
-    <section class="rsvp" id="rsvp">
-
-        <h2 class="section-title">
-            RSVP
-        </h2>
-
-
-        <form
-            class="rsvp-form"
-            id="rsvpForm"
-            action="https://script.google.com/macros/s/AKfycbxfWLHT8SwmThFwbhepqMKduDYWsjWooJEFmIqGtwpJW5fZfTSaebzFjexFwSWzfcXa/exec"
-            method="POST"
-            target="hidden_iframe"
+        <a
+            href="https://maps.app.goo.gl/Aog3oVXVGiwb47Cz9?g_st=iw"
+            target="_blank"
+            class="map-button"
         >
+            Open in Maps
+        </a>
+
+    </div>
+
+</section>
 
 
-            <div class="form-group">
 
-                <label>
-                    Your Name ✨
-                </label>
+<!-- RECEPTION -->
+
+<section class="event-section">
+
+    <div class="event-label">
+        Followed by
+    </div>
+
+    <h2 class="event-title">
+        The Celebration
+    </h2>
+
+    <div class="event-card">
+
+        <div class="event-icon">
+            ✦
+        </div>
+
+        <h3>
+            Wedding Reception
+        </h3>
+
+        <p>
+
+            Saturday, 10 October 2026
+
+            <br>
+
+            7:30 PM
+
+            <br><br>
+
+            Le Meridien Hotel
+
+            <br>
+
+            Cairo Airport
+
+        </p>
+
+        <a
+            href="https://maps.app.goo.gl/ARrpiHBE5yC5Y9dr8?g_st=iw"
+            target="_blank"
+            class="map-button"
+        >
+            Open in Maps
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- COUNTDOWN -->
+
+<section class="countdown-section">
+
+    <h2 class="countdown-title">
+        Counting Down
+    </h2>
+
+    <p class="countdown-subtitle">
+        Until we say "I do"
+    </p>
+
+
+    <div class="countdown">
+
+        <div class="time-box">
+
+            <span
+                class="time-number"
+                id="days"
+            >
+                0
+            </span>
+
+            <span class="time-label">
+                Days
+            </span>
+
+        </div>
+
+
+        <div class="time-box">
+
+            <span
+                class="time-number"
+                id="hours"
+            >
+                0
+            </span>
+
+            <span class="time-label">
+                Hours
+            </span>
+
+        </div>
+
+
+        <div class="time-box">
+
+            <span
+                class="time-number"
+                id="minutes"
+            >
+                0
+            </span>
+
+            <span class="time-label">
+                Minutes
+            </span>
+
+        </div>
+
+
+        <div class="time-box">
+
+            <span
+                class="time-number"
+                id="seconds"
+            >
+                0
+            </span>
+
+            <span class="time-label">
+                Seconds
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- RSVP -->
+
+<section class="rsvp-section" id="rsvp">
+
+    <h2 class="rsvp-title">
+        RSVP
+    </h2>
+
+    <p class="rsvp-intro">
+        We would love to celebrate with you 🤍
+    </p>
+
+
+    <form
+        class="rsvp-form"
+        id="rsvpForm"
+
+        action="https://script.google.com/macros/s/AKfycbxfWLHT8SwmThFwbhepqMKduDYWsjWooJEFmIqGtwpJW5fZfTSaebzFjexFwSWzfcXa/exec"
+
+        method="POST"
+
+        target="hidden_iframe"
+    >
+
+
+        <!-- NAME -->
+
+        <div class="form-group">
+
+            <label>
+                Your Name ✨
+            </label>
+
+            <input
+                type="text"
+                name="name"
+                required
+                placeholder="Your name"
+            >
+
+        </div>
+
+
+
+        <!-- SIDE -->
+
+        <div class="form-group">
+
+            <label>
+                Your side of the love story? ❤️
+            </label>
+
+
+            <label class="option">
 
                 <input
-                    type="text"
-                    name="name"
+                    type="radio"
+                    name="team"
+                    value="Team Groom"
                     required
-                    placeholder="Your name"
                 >
 
-            </div>
+                🤵 Team Groom
+
+            </label>
 
 
+            <label class="option">
 
-            <div class="form-group">
+                <input
+                    type="radio"
+                    name="team"
+                    value="Team Bride"
+                >
 
-                <label>
-                    Your side of the love story? ❤️
-                </label>
+                👰 Team Bride
 
+            </label>
 
-                <label class="option">
-
-                    <input
-                        type="radio"
-                        name="team"
-                        value="Team Groom"
-                        required
-                    >
-
-                    🤵 Team Groom
-
-                </label>
-
-
-                <label class="option">
-
-                    <input
-                        type="radio"
-                        name="team"
-                        value="Team Bride"
-                    >
-
-                    👰 Team Bride
-
-                </label>
-
-            </div>
-
-
-
-            <div class="form-group">
-
-                <label>
-                    Will you attend our wedding? 🤍
-                </label>
-
-
-                <label class="option">
-
-                    <input
-                        type="radio"
-                        name="attendance"
-                        value="Absolutely! 💃🏻🕺🏻"
-                        required
-                    >
-
-                    Absolutely! 💃🏻🕺🏻
-
-                </label>
-
-
-                <label class="option">
-
-                    <input
-                        type="radio"
-                        name="attendance"
-                        value="Sorry, I can't make it"
-                    >
-
-                    Sorry, I can't make it
-
-                </label>
-
-            </div>
-
-
-
-            <button
-                type="submit"
-                class="submit-button"
-            >
-                Send RSVP 🤍
-            </button>
-
-        </form>
-
-
-        <div
-            class="thank-you"
-            id="thankYou"
-        >
-            Thank you for celebrating with us! 🤍
         </div>
 
-    </section>
+
+
+        <!-- ATTENDANCE -->
+
+        <div class="form-group">
+
+            <label>
+                Will you attend our wedding? 🤍
+            </label>
+
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="attendance"
+                    value="Absolutely! 💃🏻🕺🏻"
+                    required
+                >
+
+                Absolutely! 💃🏻🕺🏻
+
+            </label>
+
+
+            <label class="option">
+
+                <input
+                    type="radio"
+                    name="attendance"
+                    value="Sorry, I can't make it"
+                >
+
+                Sorry, I can't make it
+
+            </label>
+
+        </div>
 
 
 
-    <footer>
+        <button
+            type="submit"
+            class="submit-button"
+        >
+            Send RSVP 🤍
+        </button>
 
+    </form>
+
+
+    <div
+        class="thank-you"
+        id="thankYou"
+    >
+        Thank you for celebrating with us! 🤍
+    </div>
+
+</section>
+
+
+
+<!-- FINAL -->
+
+<section class="final-section">
+
+    <div class="final-names">
         Fady &amp; Sarah
+    </div>
 
-        <br>
-
+    <div class="final-date">
         10 · 10 · 2026
+    </div>
 
-    </footer>
+    <div class="final-heart">
+        ♡
+    </div>
+
+</section>
+
+
+
+<footer>
+
+    With love, Fady &amp; Sarah
+
+</footer>
 
 
 </div>
 
 
 
-<!-- HIDDEN RSVP FRAME -->
+<!-- =========================================================
+     HIDDEN RSVP FRAME
+========================================================= -->
 
 <iframe
     name="hidden_iframe"
@@ -1012,9 +1275,9 @@ footer {
 
 <script>
 
-/* =====================================================
+/* =========================================================
    OPEN INVITATION
-===================================================== */
+========================================================= */
 
 const openButton =
     document.getElementById("openInvitation");
@@ -1028,30 +1291,11 @@ const cover =
 
 openButton.addEventListener("click", function () {
 
-    /*
-       Unlock scrolling
-    */
-
     document.body.classList.remove("locked");
-
-
-    /*
-       Hide the front cover
-    */
 
     cover.style.display = "none";
 
-
-    /*
-       Show full invitation
-    */
-
     invitationContent.classList.add("reveal");
-
-
-    /*
-       Start at the welcome section
-    */
 
     window.scrollTo({
         top: 0,
@@ -1062,9 +1306,9 @@ openButton.addEventListener("click", function () {
 
 
 
-/* =====================================================
+/* =========================================================
    COUNTDOWN
-===================================================== */
+========================================================= */
 
 const weddingDate =
     new Date("2026-10-10T18:00:00+03:00");
@@ -1137,9 +1381,9 @@ setInterval(updateCountdown, 1000);
 
 
 
-/* =====================================================
-   RSVP
-===================================================== */
+/* =========================================================
+   RSVP THANK YOU
+========================================================= */
 
 const rsvpForm =
     document.getElementById("rsvpForm");
