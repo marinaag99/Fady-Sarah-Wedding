@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -13,6 +14,10 @@
 
 <style>
 
+/* =========================
+   COLORS
+========================= */
+
 :root {
     --ivory: #f8f4eb;
     --cream: #eee7d8;
@@ -22,6 +27,11 @@
     --text: #4d4a42;
     --white: #fffdf8;
 }
+
+
+/* =========================
+   BASIC
+========================= */
 
 * {
     box-sizing: border-box;
@@ -49,30 +59,48 @@ section {
     margin: auto;
 }
 
+
 /* =========================
    HERO
 ========================= */
 
 .hero {
     min-height: 100vh;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     text-align: center;
+
     position: relative;
+
     padding: 60px 20px;
+
     background:
-        radial-gradient(circle at top, rgba(182,155,99,.12), transparent 35%),
-        linear-gradient(180deg, #faf7ef 0%, #eee8da 100%);
+        radial-gradient(
+            circle at top,
+            rgba(182,155,99,.12),
+            transparent 35%
+        ),
+        linear-gradient(
+            180deg,
+            #faf7ef 0%,
+            #eee8da 100%
+        );
 }
 
 .hero::before,
 .hero::after {
     content: "";
+
     position: absolute;
+
     width: 150px;
     height: 150px;
+
     border: 1px solid rgba(120,128,106,.35);
+
     border-radius: 50%;
 }
 
@@ -93,131 +121,188 @@ section {
 
 .monogram {
     font-family: "Cormorant Garamond", serif;
+
     font-size: 70px;
     font-weight: 300;
+
     color: var(--gold);
+
     letter-spacing: -8px;
+
     margin-bottom: 8px;
 }
 
 .small-title {
     font-family: "Montserrat", sans-serif;
+
     font-size: 10px;
+
     letter-spacing: 5px;
+
     color: var(--olive);
+
     text-transform: uppercase;
+
     margin-bottom: 20px;
 }
 
 .names {
     font-family: "Great Vibes", cursive;
+
     font-size: clamp(65px, 16vw, 110px);
+
     line-height: .95;
+
     color: var(--dark-olive);
 }
 
 .names span {
     color: var(--gold);
+
     font-size: .65em;
+
     margin: 0 5px;
 }
 
 .hero-date {
     margin-top: 28px;
+
     font-size: 21px;
+
     letter-spacing: 2px;
 }
 
 .hero-date strong {
     color: var(--olive);
+
     font-weight: 600;
 }
 
 .hero-line {
     width: 100px;
+
     height: 1px;
+
     background: var(--gold);
+
     margin: 25px auto;
 }
 
 .hero-verse {
     font-size: 18px;
+
     font-style: italic;
+
     line-height: 1.5;
+
     max-width: 500px;
+
     margin: auto;
 }
 
 .open-button {
     display: inline-block;
+
     margin-top: 38px;
+
     padding: 13px 30px;
+
     border: 1px solid var(--olive);
+
     color: var(--dark-olive);
+
     text-decoration: none;
+
     font-family: "Montserrat", sans-serif;
+
     font-size: 10px;
+
     letter-spacing: 3px;
+
     text-transform: uppercase;
+
     transition: .3s;
 }
 
 .open-button:hover {
     background: var(--olive);
+
     color: white;
 }
 
+
 /* =========================
-   GENERAL
+   GENERAL SECTIONS
 ========================= */
 
 .section {
     padding: 90px 20px;
+
     text-align: center;
 }
 
 .section-title {
     font-family: "Montserrat", sans-serif;
+
     font-size: 10px;
+
     letter-spacing: 4px;
+
     color: var(--olive);
+
     text-transform: uppercase;
+
     margin-bottom: 18px;
 }
 
 .section-heading {
     font-family: "Great Vibes", cursive;
+
     font-size: 58px;
+
     color: var(--dark-olive);
+
     margin-bottom: 25px;
 }
 
 .divider {
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     gap: 15px;
+
     margin: 25px auto;
 }
 
 .divider span {
     width: 55px;
+
     height: 1px;
+
     background: var(--gold);
 }
 
 .divider b {
     color: var(--gold);
+
     font-size: 18px;
+
     font-weight: 400;
 }
 
 .message {
     max-width: 620px;
+
     margin: auto;
+
     font-size: 21px;
+
     line-height: 1.65;
 }
+
 
 /* =========================
    EVENTS
@@ -229,53 +314,76 @@ section {
 
 .event-grid {
     display: grid;
+
     grid-template-columns: 1fr 1fr;
+
     gap: 25px;
+
     margin-top: 45px;
 }
 
 .event-card {
     background: rgba(255,255,255,.55);
+
     border: 1px solid rgba(120,128,106,.25);
+
     padding: 35px 22px;
 }
 
 .event-icon {
     font-size: 30px;
+
     color: var(--gold);
+
     margin-bottom: 15px;
 }
 
 .event-card h3 {
     font-size: 30px;
+
     font-weight: 500;
+
     color: var(--dark-olive);
 }
 
 .event-time {
     margin: 10px 0;
+
     font-size: 18px;
+
     color: var(--gold);
 }
 
 .event-place {
     font-size: 19px;
+
     line-height: 1.4;
+
     min-height: 55px;
 }
 
 .map-button {
     display: inline-block;
+
     margin-top: 20px;
+
     text-decoration: none;
+
     color: var(--olive);
+
     border-bottom: 1px solid var(--gold);
+
     padding-bottom: 3px;
+
     font-family: "Montserrat", sans-serif;
+
     font-size: 10px;
+
     letter-spacing: 2px;
+
     text-transform: uppercase;
 }
+
 
 /* =========================
    COUNTDOWN
@@ -283,6 +391,7 @@ section {
 
 .countdown-section {
     background: var(--dark-olive);
+
     color: white;
 }
 
@@ -296,9 +405,13 @@ section {
 
 .countdown {
     display: grid;
+
     grid-template-columns: repeat(4, 1fr);
+
     max-width: 650px;
+
     margin: 45px auto 0;
+
     gap: 10px;
 }
 
@@ -308,18 +421,26 @@ section {
 
 .count-number {
     font-size: clamp(38px, 9vw, 62px);
+
     font-weight: 300;
+
     line-height: 1;
 }
 
 .count-label {
     font-family: "Montserrat", sans-serif;
+
     font-size: 8px;
+
     letter-spacing: 3px;
+
     text-transform: uppercase;
+
     margin-top: 10px;
+
     opacity: .8;
 }
+
 
 /* =========================
    RSVP
@@ -327,81 +448,118 @@ section {
 
 .rsvp-section {
     background:
-        radial-gradient(circle at bottom, rgba(182,155,99,.10), transparent 40%),
+        radial-gradient(
+            circle at bottom,
+            rgba(182,155,99,.10),
+            transparent 40%
+        ),
         var(--ivory);
 }
 
 .rsvp-box {
     max-width: 600px;
+
     margin: 40px auto 0;
+
     padding: 40px 28px;
+
     background: rgba(255,255,255,.65);
+
     border: 1px solid rgba(120,128,106,.3);
+
     text-align: left;
 }
 
 .form-group {
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .form-label {
     display: block;
+
     font-family: "Montserrat", sans-serif;
+
     font-size: 10px;
+
     letter-spacing: 2px;
+
     text-transform: uppercase;
+
     color: var(--dark-olive);
-    margin-bottom: 10px;
+
+    margin-bottom: 13px;
 }
 
-input[type="text"],
-textarea,
-select {
+input[type="text"] {
     width: 100%;
-    border: none;
-    border-bottom: 1px solid #bbb4a4;
-    background: transparent;
-    padding: 11px 4px;
-    font-family: "Cormorant Garamond", serif;
-    font-size: 19px;
-    color: var(--text);
-    outline: none;
-}
 
-textarea {
-    resize: vertical;
-    min-height: 70px;
+    border: none;
+
+    border-bottom: 1px solid #bbb4a4;
+
+    background: transparent;
+
+    padding: 11px 4px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 19px;
+
+    color: var(--text);
+
+    outline: none;
 }
 
 .radio-group {
     display: flex;
+
     flex-direction: column;
-    gap: 12px;
+
+    gap: 13px;
 }
 
 .radio-option {
     display: flex;
+
     align-items: center;
+
     gap: 10px;
-    font-size: 18px;
+
+    font-size: 20px;
+
     cursor: pointer;
+
+    padding: 4px 0;
 }
 
 .radio-option input {
     accent-color: var(--olive);
+
+    width: 17px;
+    height: 17px;
 }
 
 .submit-button {
     width: 100%;
+
     border: 1px solid var(--olive);
+
     background: var(--olive);
+
     color: white;
+
     padding: 15px;
+
     font-family: "Montserrat", sans-serif;
+
     font-size: 10px;
+
     letter-spacing: 3px;
+
     text-transform: uppercase;
+
     cursor: pointer;
+
     transition: .3s;
 }
 
@@ -409,22 +567,36 @@ textarea {
     background: var(--dark-olive);
 }
 
+.submit-button:disabled {
+    opacity: .7;
+
+    cursor: wait;
+}
+
 .success-message {
     display: none;
+
     text-align: center;
+
     padding: 25px 10px;
 }
 
 .success-message h3 {
     font-family: "Great Vibes", cursive;
+
     font-size: 48px;
+
     color: var(--dark-olive);
+
     margin-bottom: 10px;
 }
 
 .success-message p {
     font-size: 19px;
+
+    line-height: 1.5;
 }
+
 
 /* =========================
    FOOTER
@@ -432,29 +604,39 @@ textarea {
 
 .footer {
     padding: 70px 20px;
+
     background: var(--cream);
+
     text-align: center;
 }
 
 .footer-names {
     font-family: "Great Vibes", cursive;
+
     font-size: 55px;
+
     color: var(--dark-olive);
 }
 
 .footer-date {
     margin-top: 10px;
+
     font-size: 17px;
+
     letter-spacing: 2px;
 }
 
 .footer-heart {
     color: var(--gold);
+
     margin: 25px 0;
+
+    font-size: 20px;
 }
 
+
 /* =========================
-   RESPONSIVE
+   MOBILE
 ========================= */
 
 @media (max-width: 650px) {
@@ -477,6 +659,7 @@ textarea {
 
     .count-label {
         font-size: 7px;
+
         letter-spacing: 2px;
     }
 
@@ -491,22 +674,31 @@ textarea {
     .message {
         font-size: 19px;
     }
+
+    .radio-option {
+        font-size: 19px;
+    }
 }
 
 </style>
+
 </head>
+
 
 <body>
 
-<!-- =========================
+
+<!-- =====================================================
      HERO
-========================= -->
+===================================================== -->
 
 <section class="hero">
 
     <div class="hero-inner">
 
-        <div class="monogram">F S</div>
+        <div class="monogram">
+            F S
+        </div>
 
         <div class="small-title">
             Together with their families
@@ -519,18 +711,30 @@ textarea {
         <div class="hero-line"></div>
 
         <div class="hero-date">
-            <strong>Saturday</strong><br>
+
+            <strong>Saturday</strong>
+
+            <br>
+
             10 October 2026
+
         </div>
 
         <p class="hero-verse">
+
             “Therefore what God has joined together,
             let not man separate.”
+
             <br>
+
             <em>Mark 10:9</em>
+
         </p>
 
-        <a href="#welcome" class="open-button">
+        <a
+            href="#welcome"
+            class="open-button"
+        >
             Tap to open
         </a>
 
@@ -539,11 +743,15 @@ textarea {
 </section>
 
 
-<!-- =========================
-     WELCOME
-========================= -->
 
-<section class="section" id="welcome">
+<!-- =====================================================
+     WELCOME
+===================================================== -->
+
+<section
+    class="section"
+    id="welcome"
+>
 
     <div class="container">
 
@@ -556,16 +764,26 @@ textarea {
         </div>
 
         <div class="divider">
+
             <span></span>
+
             <b>♡</b>
+
             <span></span>
+
         </div>
 
         <p class="message">
-            With joyful hearts, we invite you to celebrate
-            this beautiful beginning with us.
+
+            With joyful hearts, we invite you
+            to celebrate this beautiful beginning
+            with us.
+
+            <br>
+
             Your presence would mean so much to us
             as we begin this new chapter together.
+
         </p>
 
     </div>
@@ -573,9 +791,10 @@ textarea {
 </section>
 
 
-<!-- =========================
+
+<!-- =====================================================
      LOCATIONS
-========================= -->
+===================================================== -->
 
 <section class="section events">
 
@@ -589,58 +808,79 @@ textarea {
             The Celebration
         </div>
 
+
         <div class="event-grid">
+
 
             <!-- CHURCH -->
 
             <div class="event-card">
 
-                <div class="event-icon">✦</div>
+                <div class="event-icon">
+                    ✦
+                </div>
 
-                <h3>Church Ceremony</h3>
+                <h3>
+                    Church Ceremony
+                </h3>
 
                 <div class="event-time">
                     6:00 PM
                 </div>
 
                 <div class="event-place">
+
                     St. Mary & St. Athanasius Church
+
                     <br>
+
                     Nasr City
+
                 </div>
 
                 <a
                     class="map-button"
                     href="https://maps.app.goo.gl/Aog3oVXVGiwb47Cz9?g_st=iw"
-                    target="_blank">
+                    target="_blank"
+                >
                     Navigate to Church
                 </a>
 
             </div>
 
 
+
             <!-- RECEPTION -->
 
             <div class="event-card">
 
-                <div class="event-icon">✦</div>
+                <div class="event-icon">
+                    ✦
+                </div>
 
-                <h3>Reception</h3>
+                <h3>
+                    Reception
+                </h3>
 
                 <div class="event-time">
                     7:30 PM
                 </div>
 
                 <div class="event-place">
+
                     Le Méridien Cairo Airport
+
                     <br>
+
                     Cairo
+
                 </div>
 
                 <a
                     class="map-button"
                     href="https://maps.app.goo.gl/ARrpiHBE5yC5Y9dr8?g_st=iw"
-                    target="_blank">
+                    target="_blank"
+                >
                     Navigate to Reception
                 </a>
 
@@ -653,9 +893,10 @@ textarea {
 </section>
 
 
-<!-- =========================
+
+<!-- =====================================================
      COUNTDOWN
-========================= -->
+===================================================== -->
 
 <section class="section countdown-section">
 
@@ -669,26 +910,71 @@ textarea {
             Until we say “I do”
         </div>
 
+
         <div class="countdown">
 
-            <div class="count-box">
-                <div class="count-number" id="days">00</div>
-                <div class="count-label">Days</div>
-            </div>
 
             <div class="count-box">
-                <div class="count-number" id="hours">00</div>
-                <div class="count-label">Hours</div>
+
+                <div
+                    class="count-number"
+                    id="days"
+                >
+                    00
+                </div>
+
+                <div class="count-label">
+                    Days
+                </div>
+
             </div>
 
-            <div class="count-box">
-                <div class="count-number" id="minutes">00</div>
-                <div class="count-label">Minutes</div>
-            </div>
 
             <div class="count-box">
-                <div class="count-number" id="seconds">00</div>
-                <div class="count-label">Seconds</div>
+
+                <div
+                    class="count-number"
+                    id="hours"
+                >
+                    00
+                </div>
+
+                <div class="count-label">
+                    Hours
+                </div>
+
+            </div>
+
+
+            <div class="count-box">
+
+                <div
+                    class="count-number"
+                    id="minutes"
+                >
+                    00
+                </div>
+
+                <div class="count-label">
+                    Minutes
+                </div>
+
+            </div>
+
+
+            <div class="count-box">
+
+                <div
+                    class="count-number"
+                    id="seconds"
+                >
+                    00
+                </div>
+
+                <div class="count-label">
+                    Seconds
+                </div>
+
             </div>
 
         </div>
@@ -698,11 +984,15 @@ textarea {
 </section>
 
 
-<!-- =========================
-     RSVP
-========================= -->
 
-<section class="section rsvp-section" id="rsvp">
+<!-- =====================================================
+     RSVP
+===================================================== -->
+
+<section
+    class="section rsvp-section"
+    id="rsvp"
+>
 
     <div class="container">
 
@@ -715,31 +1005,41 @@ textarea {
         </div>
 
         <p class="message">
-            Please let us know if you'll be joining us
-            on our special day.
+
+            We would love to know if you'll be
+            joining us on our special day. ❤️
+
         </p>
 
 
         <div class="rsvp-box">
 
+
             <!--
-            IMPORTANT:
-            This is connected to your Google Apps Script.
+            GOOGLE APPS SCRIPT
             -->
 
             <form
                 id="rsvpForm"
+
                 action="https://script.google.com/macros/s/AKfycbxfWLHT8SwmThFwbhepqMKduDYWsjWooJEFmIqGtwpJW5fZfTSaebzFjexFwSWzfcXa/exec"
+
                 method="POST"
+
                 target="hiddenFrame"
             >
 
-                <!-- NAME -->
+
+                <!-- =====================
+                     NAME
+                ====================== -->
 
                 <div class="form-group">
 
                     <label class="form-label">
-                        Full Name *
+
+                        Your Name ✨
+
                     </label>
 
                     <input
@@ -752,106 +1052,149 @@ textarea {
                 </div>
 
 
-                <!-- ATTENDANCE -->
+
+                <!-- =====================
+                     TEAM
+                ====================== -->
 
                 <div class="form-group">
 
                     <label class="form-label">
-                        Will you attend our wedding? *
+
+                        Your side of the love story? ❤️
+
                     </label>
+
 
                     <div class="radio-group">
 
-                        <label class="radio-option">
-                            <input
-                                type="radio"
-                                name="attendance"
-                                value="Yes"
-                                required
-                            >
-                            Yes, I'll be there 🤍
-                        </label>
 
                         <label class="radio-option">
+
                             <input
                                 type="radio"
-                                name="attendance"
-                                value="No"
+                                name="team"
+                                value="Team Groom"
+                                required
                             >
-                            Sorry, I can't make it
+
+                            🤵 Team Groom
+
                         </label>
+
+
+                        <label class="radio-option">
+
+                            <input
+                                type="radio"
+                                name="team"
+                                value="Team Bride"
+                            >
+
+                            👰 Team Bride
+
+                        </label>
+
 
                     </div>
 
                 </div>
 
 
-                <!-- NUMBER OF GUESTS -->
+
+                <!-- =====================
+                     ATTENDANCE
+                ====================== -->
 
                 <div class="form-group">
 
                     <label class="form-label">
-                        Number of guests
+
+                        Will you attend our wedding? 🤍
+
                     </label>
 
-                    <select name="guests">
 
-                        <option value="">Please select</option>
-                        <option value="1">1 guest</option>
-                        <option value="2">2 guests</option>
-                        <option value="3">3 guests</option>
-                        <option value="4">4 guests</option>
-                        <option value="5">5 guests</option>
-                        <option value="6">6 guests</option>
+                    <div class="radio-group">
 
-                    </select>
+
+                        <label class="radio-option">
+
+                            <input
+                                type="radio"
+                                name="attendance"
+                                value="Absolutely! 💃🏻🕺🏻"
+                                required
+                            >
+
+                            Absolutely! 💃🏻🕺🏻
+
+                        </label>
+
+
+                        <label class="radio-option">
+
+                            <input
+                                type="radio"
+                                name="attendance"
+                                value="Sorry, I can't make it"
+                            >
+
+                            Sorry, I can't make it
+
+                        </label>
+
+
+                    </div>
 
                 </div>
 
 
-                <!-- COMMENT -->
 
-                <div class="form-group">
-
-                    <label class="form-label">
-                        Any special notes?
-                    </label>
-
-                    <textarea
-                        name="comment"
-                        placeholder="Leave us a note..."
-                    ></textarea>
-
-                </div>
-
+                <!-- =====================
+                     SUBMIT
+                ====================== -->
 
                 <button
                     type="submit"
                     class="submit-button"
                     id="submitButton"
                 >
+
                     Send RSVP
+
                 </button>
+
 
             </form>
 
 
-            <!-- SUCCESS MESSAGE -->
+
+            <!-- =====================
+                 THANK YOU
+            ====================== -->
 
             <div
                 class="success-message"
                 id="successMessage"
             >
 
-                <h3>Thank You 🤍</h3>
+                <h3>
+                    Thank You! 🤍
+                </h3>
 
                 <p>
+
                     Your RSVP has been received.
+
                     <br>
+
                     We can't wait to celebrate with you!
+
                 </p>
 
             </div>
+
 
         </div>
 
@@ -860,19 +1203,22 @@ textarea {
 </section>
 
 
-<!-- Hidden iframe allows the form to submit
-     without leaving the wedding website -->
+
+<!-- =====================================================
+     HIDDEN IFRAME
+===================================================== -->
 
 <iframe
     name="hiddenFrame"
     id="hiddenFrame"
-    style="display:none;">
-</iframe>
+    style="display:none;"
+></iframe>
 
 
-<!-- =========================
+
+<!-- =====================================================
      FOOTER
-========================= -->
+===================================================== -->
 
 <footer class="footer">
 
@@ -891,219 +1237,160 @@ textarea {
 </footer>
 
 
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
 <script>
 
-/* =========================
+
+/* =====================================================
    COUNTDOWN
-========================= */
+===================================================== */
+
+/*
+   Wedding:
+   10 October 2026
+   6:00 PM
+*/
 
 const weddingDate =
-    new Date("October 10, 2026 18:00:00").getTime();
+    new Date("2026-10-10T18:00:00+03:00").getTime();
+
 
 function updateCountdown() {
 
-    const now = new Date().getTime();
+    const now =
+        new Date().getTime();
 
-    const distance = weddingDate - now;
+    const distance =
+        weddingDate - now;
+
 
     if (distance <= 0) {
 
         document.getElementById("days").innerText = "00";
+
         document.getElementById("hours").innerText = "00";
+
         document.getElementById("minutes").innerText = "00";
+
         document.getElementById("seconds").innerText = "00";
 
         return;
     }
 
-    const days = Math.floor(
-        distance / (1000 * 60 * 60 * 24)
-    );
 
-    const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24))
-        / (1000 * 60 * 60)
-    );
+    const days =
+        Math.floor(
+            distance /
+            (1000 * 60 * 60 * 24)
+        );
 
-    const minutes = Math.floor(
-        (distance % (1000 * 60 * 60))
-        / (1000 * 60)
-    );
 
-    const seconds = Math.floor(
-        (distance % (1000 * 60))
-        / 1000
-    );
+    const hours =
+        Math.floor(
+            (distance %
+            (1000 * 60 * 60 * 24))
+            /
+            (1000 * 60 * 60)
+        );
+
+
+    const minutes =
+        Math.floor(
+            (distance %
+            (1000 * 60 * 60))
+            /
+            (1000 * 60)
+        );
+
+
+    const seconds =
+        Math.floor(
+            (distance %
+            (1000 * 60))
+            /
+            1000
+        );
+
 
     document.getElementById("days").innerText =
         String(days).padStart(2, "0");
 
+
     document.getElementById("hours").innerText =
         String(hours).padStart(2, "0");
+
 
     document.getElementById("minutes").innerText =
         String(minutes).padStart(2, "0");
 
+
     document.getElementById("seconds").innerText =
         String(seconds).padStart(2, "0");
+
 }
+
 
 updateCountdown();
 
-setInterval(updateCountdown, 1000);
+
+setInterval(
+    updateCountdown,
+    1000
+);
 
 
-<!-- =========================
-     RSVP
-========================= -->
 
-<section class="section rsvp-section" id="rsvp">
+/* =====================================================
+   RSVP
+===================================================== */
 
-    <div class="container">
+const form =
+    document.getElementById("rsvpForm");
 
-        <div class="section-title">
-            Kindly respond
-        </div>
+const button =
+    document.getElementById("submitButton");
 
-        <div class="section-heading">
-            RSVP
-        </div>
-
-        <p class="message">
-            We would love to know if you'll be joining us
-            on our special day. ❤️
-        </p>
-
-        <div class="rsvp-box">
-
-            <form
-                id="rsvpForm"
-                action="https://script.google.com/macros/s/AKfycbxfWLHT8SwmThFwbhepqMKduDYWsjWooJEFmIqGtwpJW5fZfTSaebzFjexFwSWzfcXa/exec"
-                method="POST"
-                target="hiddenFrame"
-            >
-
-                <!-- NAME -->
-
-                <div class="form-group">
-
-                    <label class="form-label">
-                        Your Name ✨
-                    </label>
-
-                    <input
-                        type="text"
-                        name="name"
-                        placeholder="Your full name"
-                        required
-                    >
-
-                </div>
+const success =
+    document.getElementById("successMessage");
 
 
-                <!-- TEAM -->
+form.addEventListener(
+    "submit",
+    function() {
 
-                <div class="form-group">
+        button.disabled = true;
 
-                    <label class="form-label">
-                        Your side of the love story? ❤️
-                    </label>
-
-                    <div class="radio-group">
-
-                        <label class="radio-option">
-                            <input
-                                type="radio"
-                                name="team"
-                                value="Team Groom"
-                                required
-                            >
-                            🤵 Team Groom
-                        </label>
-
-                        <label class="radio-option">
-                            <input
-                                type="radio"
-                                name="team"
-                                value="Team Bride"
-                            >
-                            👰 Team Bride
-                        </label>
-
-                    </div>
-
-                </div>
+        button.innerText =
+            "Sending...";
 
 
-                <!-- ATTENDANCE -->
+        /*
+           Give Google Apps Script
+           time to receive the RSVP.
+        */
 
-                <div class="form-group">
+        setTimeout(
+            function() {
 
-                    <label class="form-label">
-                        Will you attend our wedding? 🤍
-                    </label>
+                form.style.display =
+                    "none";
 
-                    <div class="radio-group">
+                success.style.display =
+                    "block";
 
-                        <label class="radio-option">
-                            <input
-                                type="radio"
-                                name="attendance"
-                                value="Absolutely! 💃🏻🕺🏻"
-                                required
-                            >
-                            Absolutely! 💃🏻🕺🏻
-                        </label>
+            },
+            1200
+        );
 
-                        <label class="radio-option">
-                            <input
-                                type="radio"
-                                name="attendance"
-                                value="Sorry, I can't make it"
-                            >
-                            Sorry, I can't make it
-                        </label>
-
-                    </div>
-
-                </div>
-
-
-                <button
-                    type="submit"
-                    class="submit-button"
-                    id="submitButton"
-                >
-                    Send RSVP
-                </button>
-
-            </form>
-
-
-            <!-- THANK YOU -->
-
-            <div
-                class="success-message"
-                id="successMessage"
-            >
-
-                <h3>Thank You! 🤍</h3>
-
-                <p>
-                    Your RSVP has been received.
-                    <br>
-                    We can't wait to celebrate with you!
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
+    }
+);
 
 </script>
+
 
 </body>
 </html>
