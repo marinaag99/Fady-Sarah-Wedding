@@ -953,27 +953,155 @@ updateCountdown();
 setInterval(updateCountdown, 1000);
 
 
-/* =========================
-   RSVP
-========================= */
+<!-- =========================
+     RSVP
+========================= -->
 
-const form = document.getElementById("rsvpForm");
-const button = document.getElementById("submitButton");
-const success = document.getElementById("successMessage");
+<section class="section rsvp-section" id="rsvp">
 
-form.addEventListener("submit", function() {
+    <div class="container">
 
-    button.disabled = true;
-    button.innerText = "Sending...";
+        <div class="section-title">
+            Kindly respond
+        </div>
 
-    setTimeout(function() {
+        <div class="section-heading">
+            RSVP
+        </div>
 
-        form.style.display = "none";
-        success.style.display = "block";
+        <p class="message">
+            We would love to know if you'll be joining us
+            on our special day. ❤️
+        </p>
 
-    }, 1200);
+        <div class="rsvp-box">
 
-});
+            <form
+                id="rsvpForm"
+                action="https://script.google.com/macros/s/AKfycbxfWLHT8SwmThFwbhepqMKduDYWsjWooJEFmIqGtwpJW5fZfTSaebzFjexFwSWzfcXa/exec"
+                method="POST"
+                target="hiddenFrame"
+            >
+
+                <!-- NAME -->
+
+                <div class="form-group">
+
+                    <label class="form-label">
+                        Your Name ✨
+                    </label>
+
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Your full name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- TEAM -->
+
+                <div class="form-group">
+
+                    <label class="form-label">
+                        Your side of the love story? ❤️
+                    </label>
+
+                    <div class="radio-group">
+
+                        <label class="radio-option">
+                            <input
+                                type="radio"
+                                name="team"
+                                value="Team Groom"
+                                required
+                            >
+                            🤵 Team Groom
+                        </label>
+
+                        <label class="radio-option">
+                            <input
+                                type="radio"
+                                name="team"
+                                value="Team Bride"
+                            >
+                            👰 Team Bride
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ATTENDANCE -->
+
+                <div class="form-group">
+
+                    <label class="form-label">
+                        Will you attend our wedding? 🤍
+                    </label>
+
+                    <div class="radio-group">
+
+                        <label class="radio-option">
+                            <input
+                                type="radio"
+                                name="attendance"
+                                value="Absolutely! 💃🏻🕺🏻"
+                                required
+                            >
+                            Absolutely! 💃🏻🕺🏻
+                        </label>
+
+                        <label class="radio-option">
+                            <input
+                                type="radio"
+                                name="attendance"
+                                value="Sorry, I can't make it"
+                            >
+                            Sorry, I can't make it
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-button"
+                    id="submitButton"
+                >
+                    Send RSVP
+                </button>
+
+            </form>
+
+
+            <!-- THANK YOU -->
+
+            <div
+                class="success-message"
+                id="successMessage"
+            >
+
+                <h3>Thank You! 🤍</h3>
+
+                <p>
+                    Your RSVP has been received.
+                    <br>
+                    We can't wait to celebrate with you!
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 </script>
 
