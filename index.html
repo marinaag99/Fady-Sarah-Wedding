@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<title>Fady & Sarah | Wedding</title>
 
-<title>Fady & Sarah | Wedding Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
-/* ================================
-   PAGE
-================================ */
+:root {
+    --ivory: #f8f4eb;
+    --cream: #eee7d8;
+    --olive: #78806a;
+    --dark-olive: #505846;
+    --gold: #b69b63;
+    --text: #4d4a42;
+    --white: #fffdf8;
+}
 
 * {
     box-sizing: border-box;
@@ -22,550 +29,953 @@ content="width=device-width, initial-scale=1.0">
     padding: 0;
 }
 
-html,
-body {
-    width: 100%;
-    min-height: 100%;
-    margin: 0;
-    padding: 0;
-    background: #eee4d2;
+html {
+    scroll-behavior: smooth;
 }
 
 body {
+    background: var(--ivory);
+    color: var(--text);
+    font-family: "Cormorant Garamond", serif;
     overflow-x: hidden;
 }
 
-
-/* ================================
-   MAIN INVITATION
-================================ */
-
-.invitation {
-    position: relative;
-
+section {
     width: 100%;
-
-    max-width: 1024px;
-
-    margin: 0 auto;
-
-    line-height: 0;
 }
 
-
-/* ================================
-   EXACT ORIGINAL IMAGE
-================================ */
-
-.invitation-image {
-
-    display: block;
-
-    width: 100%;
-
-    height: auto;
-
-    margin: 0;
-
-    padding: 0;
-
+.container {
+    width: min(92%, 760px);
+    margin: auto;
 }
 
+/* =========================
+   HERO
+========================= */
 
-/* ================================
-   LIVE COUNTDOWN
-================================ */
-
-/*
-   IMPORTANT:
-   No background is used here.
-   The original countdown boxes from
-   the artwork remain visible.
-*/
-
-.live-countdown {
-
-    position: absolute;
-
-    left: 19.3%;
-
-    top: 67.55%;
-
-    width: 61.4%;
-
-    height: 4.8%;
-
+.hero {
+    min-height: 100vh;
     display: flex;
-
     align-items: center;
-
-    justify-content: space-between;
-
-    z-index: 5;
-
-    pointer-events: none;
-
-}
-
-
-.count-number {
-
-    width: 23%;
-
-    height: 100%;
-
-    display: flex;
-
-    align-items: center;
-
     justify-content: center;
-
-    background: transparent;
-
-    color: #5e5138;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: clamp(
-        24px,
-        4.1vw,
-        42px
-    );
-
-    font-weight: 400;
-
-    line-height: 1;
-
     text-align: center;
-
+    position: relative;
+    padding: 60px 20px;
+    background:
+        radial-gradient(circle at top, rgba(182,155,99,.12), transparent 35%),
+        linear-gradient(180deg, #faf7ef 0%, #eee8da 100%);
 }
 
-
-/* ================================
-   CHURCH LOCATION
-================================ */
-
-.church-button {
-
+.hero::before,
+.hero::after {
+    content: "";
     position: absolute;
-
-    left: 18.2%;
-
-    top: 60.05%;
-
-    width: 27.1%;
-
-    height: 4.1%;
-
-    display: block;
-
-    background: transparent;
-
-    border: 0;
-
-    z-index: 10;
-
-    cursor: pointer;
-
+    width: 150px;
+    height: 150px;
+    border: 1px solid rgba(120,128,106,.35);
+    border-radius: 50%;
 }
 
-
-/* ================================
-   HOTEL LOCATION
-================================ */
-
-.hotel-button {
-
-    position: absolute;
-
-    left: 54.7%;
-
-    top: 60.05%;
-
-    width: 27.1%;
-
-    height: 4.1%;
-
-    display: block;
-
-    background: transparent;
-
-    border: 0;
-
-    z-index: 10;
-
-    cursor: pointer;
-
+.hero::before {
+    top: 35px;
+    left: -80px;
 }
 
-
-/* ================================
-   RSVP
-================================ */
-
-.rsvp-button {
-
-    position: absolute;
-
-    left: 37%;
-
-    top: 80.8%;
-
-    width: 26%;
-
-    height: 5.5%;
-
-    display: block;
-
-    background: transparent;
-
-    border: 0;
-
-    z-index: 10;
-
-    cursor: pointer;
-
+.hero::after {
+    bottom: 35px;
+    right: -80px;
 }
 
+.hero-inner {
+    position: relative;
+    z-index: 2;
+}
 
-/* ================================
-   TAP TO OPEN
-================================ */
+.monogram {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 70px;
+    font-weight: 300;
+    color: var(--gold);
+    letter-spacing: -8px;
+    margin-bottom: 8px;
+}
 
-/*
-   This button is positioned over the
-   TAP TO OPEN text in the artwork.
-*/
+.small-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: var(--olive);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.names {
+    font-family: "Great Vibes", cursive;
+    font-size: clamp(65px, 16vw, 110px);
+    line-height: .95;
+    color: var(--dark-olive);
+}
+
+.names span {
+    color: var(--gold);
+    font-size: .65em;
+    margin: 0 5px;
+}
+
+.hero-date {
+    margin-top: 28px;
+    font-size: 21px;
+    letter-spacing: 2px;
+}
+
+.hero-date strong {
+    color: var(--olive);
+    font-weight: 600;
+}
+
+.hero-line {
+    width: 100px;
+    height: 1px;
+    background: var(--gold);
+    margin: 25px auto;
+}
+
+.hero-verse {
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.5;
+    max-width: 500px;
+    margin: auto;
+}
 
 .open-button {
-
-    position: absolute;
-
-    left: 35%;
-
-    top: 34.3%;
-
-    width: 30%;
-
-    height: 5%;
-
-    background: transparent;
-
-    border: 0;
-
-    z-index: 10;
-
-    cursor: pointer;
-
+    display: inline-block;
+    margin-top: 38px;
+    padding: 13px 30px;
+    border: 1px solid var(--olive);
+    color: var(--dark-olive);
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: .3s;
 }
 
+.open-button:hover {
+    background: var(--olive);
+    color: white;
+}
 
-/* ================================
-   MOBILE
-================================ */
+/* =========================
+   GENERAL
+========================= */
 
-@media (max-width: 600px) {
+.section {
+    padding: 90px 20px;
+    text-align: center;
+}
 
-    .live-countdown {
+.section-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--olive);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
 
-        left: 19.3%;
+.section-heading {
+    font-family: "Great Vibes", cursive;
+    font-size: 58px;
+    color: var(--dark-olive);
+    margin-bottom: 25px;
+}
 
-        width: 61.4%;
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 25px auto;
+}
 
-        top: 67.55%;
+.divider span {
+    width: 55px;
+    height: 1px;
+    background: var(--gold);
+}
 
+.divider b {
+    color: var(--gold);
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.message {
+    max-width: 620px;
+    margin: auto;
+    font-size: 21px;
+    line-height: 1.65;
+}
+
+/* =========================
+   EVENTS
+========================= */
+
+.events {
+    background: var(--cream);
+}
+
+.event-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 45px;
+}
+
+.event-card {
+    background: rgba(255,255,255,.55);
+    border: 1px solid rgba(120,128,106,.25);
+    padding: 35px 22px;
+}
+
+.event-icon {
+    font-size: 30px;
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.event-card h3 {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--dark-olive);
+}
+
+.event-time {
+    margin: 10px 0;
+    font-size: 18px;
+    color: var(--gold);
+}
+
+.event-place {
+    font-size: 19px;
+    line-height: 1.4;
+    min-height: 55px;
+}
+
+.map-button {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: var(--olive);
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 3px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown-section {
+    background: var(--dark-olive);
+    color: white;
+}
+
+.countdown-section .section-title {
+    color: #ddd2b7;
+}
+
+.countdown-section .section-heading {
+    color: white;
+}
+
+.countdown {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 650px;
+    margin: 45px auto 0;
+    gap: 10px;
+}
+
+.count-box {
+    padding: 20px 5px;
+}
+
+.count-number {
+    font-size: clamp(38px, 9vw, 62px);
+    font-weight: 300;
+    line-height: 1;
+}
+
+.count-label {
+    font-family: "Montserrat", sans-serif;
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    opacity: .8;
+}
+
+/* =========================
+   RSVP
+========================= */
+
+.rsvp-section {
+    background:
+        radial-gradient(circle at bottom, rgba(182,155,99,.10), transparent 40%),
+        var(--ivory);
+}
+
+.rsvp-box {
+    max-width: 600px;
+    margin: 40px auto 0;
+    padding: 40px 28px;
+    background: rgba(255,255,255,.65);
+    border: 1px solid rgba(120,128,106,.3);
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-label {
+    display: block;
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--dark-olive);
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #bbb4a4;
+    background: transparent;
+    padding: 11px 4px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 19px;
+    color: var(--text);
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 70px;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.radio-option input {
+    accent-color: var(--olive);
+}
+
+.submit-button {
+    width: 100%;
+    border: 1px solid var(--olive);
+    background: var(--olive);
+    color: white;
+    padding: 15px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.submit-button:hover {
+    background: var(--dark-olive);
+}
+
+.success-message {
+    display: none;
+    text-align: center;
+    padding: 25px 10px;
+}
+
+.success-message h3 {
+    font-family: "Great Vibes", cursive;
+    font-size: 48px;
+    color: var(--dark-olive);
+    margin-bottom: 10px;
+}
+
+.success-message p {
+    font-size: 19px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    padding: 70px 20px;
+    background: var(--cream);
+    text-align: center;
+}
+
+.footer-names {
+    font-family: "Great Vibes", cursive;
+    font-size: 55px;
+    color: var(--dark-olive);
+}
+
+.footer-date {
+    margin-top: 10px;
+    font-size: 17px;
+    letter-spacing: 2px;
+}
+
+.footer-heart {
+    color: var(--gold);
+    margin: 25px 0;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 650px) {
+
+    .section {
+        padding: 70px 18px;
+    }
+
+    .event-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .countdown {
+        gap: 0;
     }
 
     .count-number {
-
-        font-size: 17px;
-
+        font-size: 38px;
     }
 
-    .church-button {
-
-        left: 18.2%;
-
-        top: 60.05%;
-
-        width: 27.1%;
-
-        height: 4.1%;
-
+    .count-label {
+        font-size: 7px;
+        letter-spacing: 2px;
     }
 
-    .hotel-button {
-
-        left: 54.7%;
-
-        top: 60.05%;
-
-        width: 27.1%;
-
-        height: 4.1%;
-
+    .rsvp-box {
+        padding: 30px 20px;
     }
 
-    .rsvp-button {
-
-        left: 37%;
-
-        top: 80.8%;
-
-        width: 26%;
-
-        height: 5.5%;
-
+    .section-heading {
+        font-size: 50px;
     }
 
+    .message {
+        font-size: 19px;
+    }
 }
 
 </style>
-
 </head>
-
 
 <body>
 
+<!-- =========================
+     HERO
+========================= -->
 
-<div class="invitation">
+<section class="hero">
 
+    <div class="hero-inner">
 
-    <!-- =================================
-         EXACT WEDDING ARTWORK
-    ================================== -->
+        <div class="monogram">F S</div>
 
-    <img
-        src="wedding-design.png"
-        class="invitation-image"
-        alt="Fady and Sarah Wedding Invitation"
-    >
-
-
-
-    <!-- =================================
-         LIVE COUNTDOWN
-    ================================== -->
-
-    <div class="live-countdown">
-
-        <div
-            class="count-number"
-            id="days">
-            0
+        <div class="small-title">
+            Together with their families
         </div>
 
-        <div
-            class="count-number"
-            id="hours">
-            0
+        <div class="names">
+            Fady <span>&</span> Sarah
         </div>
 
-        <div
-            class="count-number"
-            id="minutes">
-            0
+        <div class="hero-line"></div>
+
+        <div class="hero-date">
+            <strong>Saturday</strong><br>
+            10 October 2026
         </div>
 
-        <div
-            class="count-number"
-            id="seconds">
-            0
+        <p class="hero-verse">
+            “Therefore what God has joined together,
+            let not man separate.”
+            <br>
+            <em>Mark 10:9</em>
+        </p>
+
+        <a href="#welcome" class="open-button">
+            Tap to open
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     WELCOME
+========================= -->
+
+<section class="section" id="welcome">
+
+    <div class="container">
+
+        <div class="section-title">
+            Our Wedding Day
+        </div>
+
+        <div class="section-heading">
+            We are getting married
+        </div>
+
+        <div class="divider">
+            <span></span>
+            <b>♡</b>
+            <span></span>
+        </div>
+
+        <p class="message">
+            With joyful hearts, we invite you to celebrate
+            this beautiful beginning with us.
+            Your presence would mean so much to us
+            as we begin this new chapter together.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     LOCATIONS
+========================= -->
+
+<section class="section events">
+
+    <div class="container">
+
+        <div class="section-title">
+            Join Us
+        </div>
+
+        <div class="section-heading">
+            The Celebration
+        </div>
+
+        <div class="event-grid">
+
+            <!-- CHURCH -->
+
+            <div class="event-card">
+
+                <div class="event-icon">✦</div>
+
+                <h3>Church Ceremony</h3>
+
+                <div class="event-time">
+                    6:00 PM
+                </div>
+
+                <div class="event-place">
+                    St. Mary & St. Athanasius Church
+                    <br>
+                    Nasr City
+                </div>
+
+                <a
+                    class="map-button"
+                    href="https://maps.app.goo.gl/Aog3oVXVGiwb47Cz9?g_st=iw"
+                    target="_blank">
+                    Navigate to Church
+                </a>
+
+            </div>
+
+
+            <!-- RECEPTION -->
+
+            <div class="event-card">
+
+                <div class="event-icon">✦</div>
+
+                <h3>Reception</h3>
+
+                <div class="event-time">
+                    7:30 PM
+                </div>
+
+                <div class="event-place">
+                    Le Méridien Cairo Airport
+                    <br>
+                    Cairo
+                </div>
+
+                <a
+                    class="map-button"
+                    href="https://maps.app.goo.gl/ARrpiHBE5yC5Y9dr8?g_st=iw"
+                    target="_blank">
+                    Navigate to Reception
+                </a>
+
+            </div>
+
         </div>
 
     </div>
 
+</section>
 
 
-    <!-- =================================
-         CHURCH LOCATION
-    ================================== -->
+<!-- =========================
+     COUNTDOWN
+========================= -->
 
-    <a
-        href="https://maps.app.goo.gl/Aog3oVXVGiwb47Cz9?g_st=iw"
+<section class="section countdown-section">
 
-        target="_blank"
+    <div class="container">
 
-        class="church-button"
+        <div class="section-title">
+            Counting the moments
+        </div>
 
-        aria-label="Open church location">
-    </a>
+        <div class="section-heading">
+            Until we say “I do”
+        </div>
 
+        <div class="countdown">
 
+            <div class="count-box">
+                <div class="count-number" id="days">00</div>
+                <div class="count-label">Days</div>
+            </div>
 
-    <!-- =================================
-         HOTEL LOCATION
-    ================================== -->
+            <div class="count-box">
+                <div class="count-number" id="hours">00</div>
+                <div class="count-label">Hours</div>
+            </div>
 
-    <a
-        href="https://maps.app.goo.gl/ARrpiHBE5yC5Y9dr8?g_st=iw"
+            <div class="count-box">
+                <div class="count-number" id="minutes">00</div>
+                <div class="count-label">Minutes</div>
+            </div>
 
-        target="_blank"
+            <div class="count-box">
+                <div class="count-number" id="seconds">00</div>
+                <div class="count-label">Seconds</div>
+            </div>
 
-        class="hotel-button"
+        </div>
 
-        aria-label="Open reception location">
-    </a>
+    </div>
 
-
-
-    <!-- =================================
-         RSVP
-    ================================== -->
-
-    <a
-        href="https://forms.gle/RbQumMt9hYUPtmz8A"
-
-        target="_blank"
-
-        class="rsvp-button"
-
-        aria-label="RSVP">
-    </a>
+</section>
 
 
+<!-- =========================
+     RSVP
+========================= -->
 
-    <!-- =================================
-         TAP TO OPEN
-    ================================== -->
+<section class="section rsvp-section" id="rsvp">
 
-    <button
-        class="open-button"
+    <div class="container">
 
-        onclick="openInvitation()"
+        <div class="section-title">
+            Kindly respond
+        </div>
 
-        aria-label="Open invitation">
-    </button>
+        <div class="section-heading">
+            RSVP
+        </div>
+
+        <p class="message">
+            Please let us know if you'll be joining us
+            on our special day.
+        </p>
 
 
-</div>
+        <div class="rsvp-box">
 
+            <!--
+            IMPORTANT:
+            This is connected to your Google Apps Script.
+            -->
+
+            <form
+                id="rsvpForm"
+                action="https://script.google.com/macros/s/AKfycbxfWLHT8SwmThFwbhepqMKduDYWsjWooJEFmIqGtwpJW5fZfTSaebzFjexFwSWzfcXa/exec"
+                method="POST"
+                target="hiddenFrame"
+            >
+
+                <!-- NAME -->
+
+                <div class="form-group">
+
+                    <label class="form-label">
+                        Full Name *
+                    </label>
+
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Your full name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- ATTENDANCE -->
+
+                <div class="form-group">
+
+                    <label class="form-label">
+                        Will you attend our wedding? *
+                    </label>
+
+                    <div class="radio-group">
+
+                        <label class="radio-option">
+                            <input
+                                type="radio"
+                                name="attendance"
+                                value="Yes"
+                                required
+                            >
+                            Yes, I'll be there 🤍
+                        </label>
+
+                        <label class="radio-option">
+                            <input
+                                type="radio"
+                                name="attendance"
+                                value="No"
+                            >
+                            Sorry, I can't make it
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- NUMBER OF GUESTS -->
+
+                <div class="form-group">
+
+                    <label class="form-label">
+                        Number of guests
+                    </label>
+
+                    <select name="guests">
+
+                        <option value="">Please select</option>
+                        <option value="1">1 guest</option>
+                        <option value="2">2 guests</option>
+                        <option value="3">3 guests</option>
+                        <option value="4">4 guests</option>
+                        <option value="5">5 guests</option>
+                        <option value="6">6 guests</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- COMMENT -->
+
+                <div class="form-group">
+
+                    <label class="form-label">
+                        Any special notes?
+                    </label>
+
+                    <textarea
+                        name="comment"
+                        placeholder="Leave us a note..."
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-button"
+                    id="submitButton"
+                >
+                    Send RSVP
+                </button>
+
+            </form>
+
+
+            <!-- SUCCESS MESSAGE -->
+
+            <div
+                class="success-message"
+                id="successMessage"
+            >
+
+                <h3>Thank You 🤍</h3>
+
+                <p>
+                    Your RSVP has been received.
+                    <br>
+                    We can't wait to celebrate with you!
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Hidden iframe allows the form to submit
+     without leaving the wedding website -->
+
+<iframe
+    name="hiddenFrame"
+    id="hiddenFrame"
+    style="display:none;">
+</iframe>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+    <div class="footer-names">
+        Fady & Sarah
+    </div>
+
+    <div class="footer-heart">
+        ♡
+    </div>
+
+    <div class="footer-date">
+        10 • 10 • 2026
+    </div>
+
+</footer>
 
 
 <script>
 
-
-/* ================================
-   TAP TO OPEN
-================================ */
-
-function openInvitation() {
-
-    /*
-       The invitation is already displayed
-       as one complete design.
-
-       Tapping "TAP TO OPEN" simply moves
-       the guest smoothly toward the
-       wedding details.
-    */
-
-    window.scrollTo({
-
-        top: window.innerHeight * 0.35,
-
-        behavior: "smooth"
-
-    });
-
-}
-
-
-/* ================================
-   WEDDING COUNTDOWN
-================================ */
+/* =========================
+   COUNTDOWN
+========================= */
 
 const weddingDate =
-    new Date(
-        "2026-10-10T18:00:00+03:00"
-    ).getTime();
-
+    new Date("October 10, 2026 18:00:00").getTime();
 
 function updateCountdown() {
 
-    const now =
-        new Date().getTime();
+    const now = new Date().getTime();
 
+    const distance = weddingDate - now;
 
-    let distance =
-        weddingDate - now;
+    if (distance <= 0) {
 
+        document.getElementById("days").innerText = "00";
+        document.getElementById("hours").innerText = "00";
+        document.getElementById("minutes").innerText = "00";
+        document.getElementById("seconds").innerText = "00";
 
-    if (distance < 0) {
-
-        distance = 0;
-
+        return;
     }
 
+    const days = Math.floor(
+        distance / (1000 * 60 * 60 * 24)
+    );
 
-    const days =
-        Math.floor(
-            distance /
-            (1000 * 60 * 60 * 24)
-        );
+    const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24))
+        / (1000 * 60 * 60)
+    );
 
+    const minutes = Math.floor(
+        (distance % (1000 * 60 * 60))
+        / (1000 * 60)
+    );
 
-    const hours =
-        Math.floor(
-            (
-                distance %
-                (1000 * 60 * 60 * 24)
-            )
-            /
-            (1000 * 60 * 60)
-        );
+    const seconds = Math.floor(
+        (distance % (1000 * 60))
+        / 1000
+    );
 
+    document.getElementById("days").innerText =
+        String(days).padStart(2, "0");
 
-    const minutes =
-        Math.floor(
-            (
-                distance %
-                (1000 * 60 * 60)
-            )
-            /
-            (1000 * 60)
-        );
+    document.getElementById("hours").innerText =
+        String(hours).padStart(2, "0");
 
+    document.getElementById("minutes").innerText =
+        String(minutes).padStart(2, "0");
 
-    const seconds =
-        Math.floor(
-            (
-                distance %
-                (1000 * 60)
-            )
-            /
-            1000
-        );
-
-
-    document.getElementById("days")
-        .textContent = days;
-
-
-    document.getElementById("hours")
-        .textContent = hours;
-
-
-    document.getElementById("minutes")
-        .textContent = minutes;
-
-
-    document.getElementById("seconds")
-        .textContent = seconds;
-
+    document.getElementById("seconds").innerText =
+        String(seconds).padStart(2, "0");
 }
-
 
 updateCountdown();
 
-setInterval(
-    updateCountdown,
-    1000
-);
+setInterval(updateCountdown, 1000);
+
+
+/* =========================
+   RSVP
+========================= */
+
+const form = document.getElementById("rsvpForm");
+const button = document.getElementById("submitButton");
+const success = document.getElementById("successMessage");
+
+form.addEventListener("submit", function() {
+
+    button.disabled = true;
+    button.innerText = "Sending...";
+
+    setTimeout(function() {
+
+        form.style.display = "none";
+        success.style.display = "block";
+
+    }, 1200);
+
+});
 
 </script>
 
-
 </body>
-
 </html>
