@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fady & Sarah | Wedding Invitation</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #f7f0e8;
+  color: #5f5148;
+  text-align: center;
+}
+
+.opening {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(212,180,145,.18), transparent 30%),
+    radial-gradient(circle at 80% 80%, rgba(212,180,145,.18), transparent 30%),
+    #f7f0e8;
+}
+
+.card {
+  width: min(92%, 500px);
+  min-height: 650px;
+  padding: 70px 35px;
+  border: 1px solid #d8c1a8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255,255,255,.38);
+  box-shadow: 0 15px 50px rgba(100,80,60,.12);
+}
+
+.monogram {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 70px;
+  color: #b89570;
+  letter-spacing: 8px;
+  margin-bottom: 25px;
+}
+
+.names {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px;
+  font-weight: 500;
+  color: #806a58;
+  line-height: 1;
+}
+
+.and {
+  font-size: 25px;
+  margin: 15px 0;
+  color: #b89570;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.subtitle {
+  margin-top: 30px;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.open-btn {
+  margin-top: 50px;
+  padding: 14px 35px;
+  border: 1px solid #b89570;
+  background: transparent;
+  color: #806a58;
+  letter-spacing: 3px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.open-btn:hover {
+  background: #b89570;
+  color: white;
+}
+
+#invitation {
+  display: none;
+  animation: fadeIn 1.2s ease;
+}
+
+section {
+  padding: 75px 25px;
+  max-width: 650px;
+  margin: auto;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1, h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+}
+
+.hero h1 {
+  font-size: 65px;
+  color: #806a58;
+}
+
+.hero .date {
+  margin-top: 25px;
+  font-size: 13px;
+  letter-spacing: 4px;
+}
+
+.divider {
+  width: 70px;
+  height: 1px;
+  background: #b89570;
+  margin: 35px auto;
+}
+
+h2 {
+  font-size: 42px;
+  color: #806a58;
+  margin-bottom: 20px;
+}
+
+.event {
+  margin: 45px 0;
+}
+
+.event-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  color: #b89570;
+  margin-bottom: 12px;
+}
+
+.event-time {
+  font-size: 13px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.event-place {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.map-btn,
+.rsvp-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 13px 25px;
+  border: 1px solid #b89570;
+  color: #806a58;
+  text-decoration: none;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.count-box {
+  min-width: 65px;
+  padding: 15px 8px;
+  border: 1px solid #d8c1a8;
+}
+
+.count-number {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  color: #b89570;
+}
+
+.count-label {
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+
+.rsvp {
+  background: rgba(255,255,255,.35);
+}
+
+footer {
+  padding: 50px 20px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  color: #b89570;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media(max-width:500px) {
+  .card {
+    min-height: 600px;
+  }
+
+  .names {
+    font-size: 44px;
+  }
+
+  .hero h1 {
+    font-size: 52px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- OPENING -->
+<div class="opening" id="opening">
+  <div class="card">
+
+    <div class="monogram">F & S</div>
+
+    <div class="names">Fady</div>
+    <div class="and">&</div>
+    <div class="names">Sarah</div>
+
+    <div class="subtitle">Together with their families</div>
+
+    <button class="open-btn" onclick="openInvitation()">
+      TAP TO OPEN
+    </button>
+
+  </div>
+</div>
+
+
+<!-- INVITATION -->
+<div id="invitation">
+
+  <section class="hero">
+
+    <div class="subtitle">Together with their families</div>
+
+    <h1>Fady & Sarah</h1>
+
+    <div class="divider"></div>
+
+    <div class="date">
+      10 · 10 · 2026
+    </div>
+
+    <p style="margin-top:25px; font-family:'Cormorant Garamond'; font-size:24px;">
+      We joyfully invite you to celebrate our wedding
+    </p>
+
+  </section>
+
+
+  <!-- CHURCH -->
+  <section>
+
+    <div class="subtitle">The Ceremony</div>
+
+    <h2>Holy Matrimony</h2>
+
+    <div class="divider"></div>
+
+    <div class="event">
+
+      <div class="event-title">
+        St. Mary & St. Athanasius Church
+      </div>
+
+      <div class="event-time">
+        6:00 PM
+      </div>
+
+      <div class="event-place">
+        Nasr City, Cairo
+      </div>
+
+      <a
+        class="map-btn"
+        href="https://maps.app.goo.gl/Aog3oVXVGiwb47Cz9?g_st=iw"
+        target="_blank">
+        Open Church Location
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- RECEPTION -->
+  <section>
+
+    <div class="subtitle">The Reception</div>
+
+    <h2>Let's Celebrate</h2>
+
+    <div class="divider"></div>
+
+    <div class="event">
+
+      <div class="event-title">
+        Le Méridien Cairo Airport
+      </div>
+
+      <div class="event-time">
+        7:30 PM
+      </div>
+
+      <div class="event-place">
+        Cairo, Egypt
+      </div>
+
+      <a
+        class="map-btn"
+        href="https://maps.app.goo.gl/ARrpiHBE5yC5Y9dr8?g_st=iw"
+        target="_blank">
+        Open Venue Location
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- COUNTDOWN -->
+  <section>
+
+    <div class="subtitle">Counting down to forever</div>
+
+    <h2>Our Big Day</h2>
+
+    <div class="countdown">
+
+      <div class="count-box">
+        <span class="count-number" id="days">0</span>
+        <span class="count-label">DAYS</span>
+      </div>
+
+      <div class="count-box">
+        <span class="count-number" id="hours">0</span>
+        <span class="count-label">HOURS</span>
+      </div>
+
+      <div class="count-box">
+        <span class="count-number" id="minutes">0</span>
+        <span class="count-label">MINUTES</span>
+      </div>
+
+      <div class="count-box">
+        <span class="count-number" id="seconds">0</span>
+        <span class="count-label">SECONDS</span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- RSVP -->
+  <section class="rsvp">
+
+    <div class="subtitle">Kindly respond</div>
+
+    <h2>RSVP</h2>
+
+    <div class="divider"></div>
+
+    <p style="line-height:1.8; font-size:13px;">
+      We would love to celebrate this special day with you.
+    </p>
+
+    <a
+      class="rsvp-btn"
+      href="https://forms.gle/RbQumMt9hYUPtmz8A"
+      target="_blank">
+      RSVP NOW
+    </a>
+
+  </section>
+
+
+  <footer>
+    Fady & Sarah
+    <br>
+    <span style="font-size:15px;">
+      10 · 10 · 2026
+    </span>
+  </footer>
+
+</div>
+
+
+<script>
+
+function openInvitation() {
+  document.getElementById("opening").style.display = "none";
+  document.getElementById("invitation").style.display = "block";
+  window.scrollTo(0, 0);
+}
+
+
+const weddingDate = new Date("October 10, 2026 18:00:00").getTime();
+
+function updateCountdown() {
+
+  const now = new Date().getTime();
+  const distance = weddingDate - now;
+
+  if (distance < 0) {
+    document.getElementById("days").innerHTML = "0";
+    document.getElementById("hours").innerHTML = "0";
+    document.getElementById("minutes").innerHTML = "0";
+    document.getElementById("seconds").innerHTML = "0";
+    return;
+  }
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor(
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+
+  const minutes = Math.floor(
+    (distance % (1000 * 60 * 60)) / (1000 * 60)
+  );
+
+  const seconds = Math.floor(
+    (distance % (1000 * 60)) / 1000
+  );
+
+  document.getElementById("days").innerHTML = days;
+  document.getElementById("hours").innerHTML = hours;
+  document.getElementById("minutes").innerHTML = minutes;
+  document.getElementById("seconds").innerHTML = seconds;
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+</script>
+
+</body>
+</html>
