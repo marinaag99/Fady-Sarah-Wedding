@@ -5,118 +5,288 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Fady & Sarah | Wedding Invitation</title>
 
 <style>
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-html,
+html {
+    scroll-behavior: smooth;
+}
+
 body {
+    background: #d8cbb8;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================
+   MAIN WEBSITE
+========================================= */
+
+.website {
     width: 100%;
-    min-height: 100%;
-    background: #d8cbb7;
+    max-width: 1024px;
+    margin: auto;
+    position: relative;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-}
 
-/* MAIN INVITATION */
+/* =========================================
+   OPENING IMAGE
+========================================= */
 
-.invitation {
+.opening {
     position: relative;
     width: 100%;
-    max-width: 1536px;
+    height: 100vh;
+    min-height: 650px;
+    overflow: hidden;
+    cursor: default;
 }
 
-/* EXACT INVITATION IMAGE */
+.opening img {
+    position: absolute;
+
+    width: 100%;
+
+    height: auto;
+
+    left: 0;
+    top: 0;
+}
+
+
+/* Dark transparent clickable area */
+
+.open-button {
+
+    position: absolute;
+
+    left: 35%;
+    top: 75%;
+
+    width: 30%;
+    height: 8%;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    z-index: 10;
+}
+
+
+/* =========================================
+   FULL INVITATION
+========================================= */
+
+.invitation {
+
+    position: relative;
+
+    width: 100%;
+
+    display: none;
+}
+
+
+/* Exact image */
 
 .invitation-image {
+
     display: block;
+
     width: 100%;
+
     height: auto;
 }
 
 
-/* =====================================
-   INVISIBLE INTERACTIVE BUTTONS
-===================================== */
+/* =========================================
+   LIVE COUNTDOWN
+========================================= */
 
 
-/* CHURCH LOCATION */
+/*
+   These cover the static countdown numbers
+   that are already inside the artwork.
+*/
 
-.map-church {
+.live-countdown {
+
+    position: absolute;
+
+    left: 17%;
+    top: 66.3%;
+
+    width: 66%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    pointer-events: none;
+}
+
+
+.count-number {
+
+    width: 22%;
+
+    text-align: center;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(20px, 4vw, 43px);
+
+    color: #655536;
+
+    line-height: 1;
+
+    background: rgba(242,232,214,0.96);
+
+    padding: 4px 2px;
+
+    border-radius: 2px;
+
+}
+
+
+/* =========================================
+   CHURCH BUTTON
+========================================= */
+
+.church-button {
 
     position: absolute;
 
     left: 18%;
-    top: 57.2%;
+
+    top: 51.3%;
 
     width: 27%;
-    height: 3.5%;
 
-    display: block;
+    height: 5%;
 
     background: transparent;
 
+    border: none;
+
     cursor: pointer;
+
 }
 
 
-/* HOTEL LOCATION */
+/* =========================================
+   HOTEL BUTTON
+========================================= */
 
-.map-hotel {
+.hotel-button {
 
     position: absolute;
 
     left: 55%;
-    top: 57.2%;
+
+    top: 51.3%;
 
     width: 27%;
-    height: 3.5%;
 
-    display: block;
+    height: 5%;
 
     background: transparent;
 
+    border: none;
+
     cursor: pointer;
+
 }
 
 
-/* RSVP */
+/* =========================================
+   RSVP BUTTON
+========================================= */
 
-.rsvp {
+.rsvp-button {
 
     position: absolute;
 
-    left: 37%;
-    top: 77%;
+    left: 36%;
 
-    width: 26%;
-    height: 4%;
+    top: 80.2%;
 
-    display: block;
+    width: 28%;
+
+    height: 5%;
 
     background: transparent;
 
+    border: none;
+
     cursor: pointer;
+
 }
 
 
-/* MOBILE */
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 600px) {
 
-    .invitation {
+    .opening {
+
+        min-height: 100vh;
+
+        height: 100vh;
+
+    }
+
+    .opening img {
+
         width: 100%;
+
+        height: auto;
+
+    }
+
+    .open-button {
+
+        top: 74%;
+
+        left: 32%;
+
+        width: 36%;
+
+        height: 9%;
+
+    }
+
+    .live-countdown {
+
+        left: 17%;
+
+        width: 66%;
+
+    }
+
+    .count-number {
+
+        font-size: 18px;
+
+        padding: 3px 1px;
+
     }
 
 }
@@ -129,49 +299,269 @@ body {
 <body>
 
 
-<div class="invitation">
+<div class="website">
 
 
-    <!-- EXACT WEDDING DESIGN -->
+<!-- =====================================
+     OPENING
+===================================== -->
+
+<div
+    class="opening"
+    id="opening">
+
+
+    <img
+        src="wedding-design.png"
+        alt="Fady & Sarah Wedding Invitation">
+
+
+    <!-- TAP TO OPEN -->
+
+    <button
+        class="open-button"
+        onclick="openInvitation()"
+        aria-label="Open invitation">
+    </button>
+
+
+</div>
+
+
+
+<!-- =====================================
+     FULL INVITATION
+===================================== -->
+
+<div
+    class="invitation"
+    id="invitation">
+
 
     <img
         src="wedding-design.png"
         class="invitation-image"
-        alt="Fady and Sarah Wedding Invitation"
-    >
+        alt="Fady & Sarah Wedding Invitation">
 
 
-    <!-- CHURCH LOCATION -->
+    <!-- =================================
+         LIVE COUNTDOWN
+    ================================== -->
+
+    <div class="live-countdown">
+
+
+        <div
+            class="count-number"
+            id="days">
+
+            0
+
+        </div>
+
+
+        <div
+            class="count-number"
+            id="hours">
+
+            0
+
+        </div>
+
+
+        <div
+            class="count-number"
+            id="minutes">
+
+            0
+
+        </div>
+
+
+        <div
+            class="count-number"
+            id="seconds">
+
+            0
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =================================
+         CHURCH LOCATION
+    ================================== -->
 
     <a
-        class="map-church"
         href="https://maps.app.goo.gl/Aog3oVXVGiwb47Cz9?g_st=iw"
         target="_blank"
+        class="church-button"
         aria-label="Open church location">
     </a>
 
 
-    <!-- HOTEL LOCATION -->
+
+    <!-- =================================
+         HOTEL LOCATION
+    ================================== -->
 
     <a
-        class="map-hotel"
         href="https://maps.app.goo.gl/ARrpiHBE5yC5Y9dr8?g_st=iw"
         target="_blank"
+        class="hotel-button"
         aria-label="Open hotel location">
     </a>
 
 
-    <!-- RSVP -->
+
+    <!-- =================================
+         RSVP
+    ================================== -->
 
     <a
-        class="rsvp"
         href="https://forms.gle/RbQumMt9hYUPtmz8A"
         target="_blank"
+        class="rsvp-button"
         aria-label="RSVP">
     </a>
 
 
 </div>
+
+
+</div>
+
+
+
+<script>
+
+
+/* =========================================
+   OPEN INVITATION
+========================================= */
+
+function openInvitation() {
+
+    document.getElementById("opening").style.display = "none";
+
+    document.getElementById("invitation").style.display = "block";
+
+    window.scrollTo(0, 0);
+
+}
+
+
+
+/* =========================================
+   WEDDING COUNTDOWN
+========================================= */
+
+
+/*
+   Wedding:
+   10 October 2026
+   6:00 PM
+   Cairo time (+03:00)
+*/
+
+const weddingDate =
+    new Date(
+        "2026-10-10T18:00:00+03:00"
+    ).getTime();
+
+
+function updateCountdown() {
+
+
+    const now =
+        new Date().getTime();
+
+
+    let distance =
+        weddingDate - now;
+
+
+    if (distance < 0) {
+
+        distance = 0;
+
+    }
+
+
+    const days =
+        Math.floor(
+            distance /
+            (1000 * 60 * 60 * 24)
+        );
+
+
+    const hours =
+        Math.floor(
+            (
+                distance %
+                (1000 * 60 * 60 * 24)
+            )
+            /
+            (1000 * 60 * 60)
+        );
+
+
+    const minutes =
+        Math.floor(
+            (
+                distance %
+                (1000 * 60 * 60)
+            )
+            /
+            (1000 * 60)
+        );
+
+
+    const seconds =
+        Math.floor(
+            (
+                distance %
+                (1000 * 60)
+            )
+            /
+            1000
+        );
+
+
+    document.getElementById(
+        "days"
+    ).innerText = days;
+
+
+    document.getElementById(
+        "hours"
+    ).innerText = hours;
+
+
+    document.getElementById(
+        "minutes"
+    ).innerText = minutes;
+
+
+    document.getElementById(
+        "seconds"
+    ).innerText = seconds;
+
+}
+
+
+updateCountdown();
+
+setInterval(
+    updateCountdown,
+    1000
+);
+
+
+</script>
 
 
 </body>
