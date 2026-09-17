@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,13 +9,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-
-/* =========================
-   COLORS
-========================= */
 
 :root {
     --ivory: #f8f4eb;
@@ -25,13 +20,7 @@
     --dark-olive: #505846;
     --gold: #b69b63;
     --text: #4d4a42;
-    --white: #fffdf8;
 }
-
-
-/* =========================
-   BASIC
-========================= */
 
 * {
     box-sizing: border-box;
@@ -50,10 +39,6 @@ body {
     overflow-x: hidden;
 }
 
-section {
-    width: 100%;
-}
-
 .container {
     width: min(92%, 760px);
     margin: auto;
@@ -66,15 +51,11 @@ section {
 
 .hero {
     min-height: 100vh;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     text-align: center;
-
     position: relative;
-
     padding: 60px 20px;
 
     background:
@@ -90,30 +71,6 @@ section {
         );
 }
 
-.hero::before,
-.hero::after {
-    content: "";
-
-    position: absolute;
-
-    width: 150px;
-    height: 150px;
-
-    border: 1px solid rgba(120,128,106,.35);
-
-    border-radius: 50%;
-}
-
-.hero::before {
-    top: 35px;
-    left: -80px;
-}
-
-.hero::after {
-    bottom: 35px;
-    right: -80px;
-}
-
 .hero-inner {
     position: relative;
     z-index: 2;
@@ -121,113 +78,81 @@ section {
 
 .monogram {
     font-family: "Cormorant Garamond", serif;
-
     font-size: 70px;
     font-weight: 300;
-
     color: var(--gold);
-
     letter-spacing: -8px;
-
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
+
+
+/* SMALL FONTS — LARGER + BOLDER */
 
 .small-title {
     font-family: "Montserrat", sans-serif;
-
-    font-size: 10px;
-
-    letter-spacing: 5px;
-
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
     color: var(--olive);
-
     text-transform: uppercase;
-
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 .names {
     font-family: "Great Vibes", cursive;
-
     font-size: clamp(65px, 16vw, 110px);
-
     line-height: .95;
-
     color: var(--dark-olive);
 }
 
 .names span {
     color: var(--gold);
-
     font-size: .65em;
-
     margin: 0 5px;
 }
 
+.hero-line {
+    width: 100px;
+    height: 1px;
+    background: var(--gold);
+    margin: 25px auto;
+}
+
 .hero-date {
-    margin-top: 28px;
-
-    font-size: 21px;
-
+    margin-top: 25px;
+    font-size: 22px;
     letter-spacing: 2px;
 }
 
 .hero-date strong {
     color: var(--olive);
-
-    font-weight: 600;
-}
-
-.hero-line {
-    width: 100px;
-
-    height: 1px;
-
-    background: var(--gold);
-
-    margin: 25px auto;
+    font-weight: 700;
 }
 
 .hero-verse {
-    font-size: 18px;
-
+    font-size: 20px;
     font-style: italic;
-
     line-height: 1.5;
-
     max-width: 500px;
-
-    margin: auto;
+    margin: 25px auto 0;
 }
 
 .open-button {
     display: inline-block;
-
     margin-top: 38px;
-
-    padding: 13px 30px;
+    padding: 15px 34px;
 
     border: 1px solid var(--olive);
 
     color: var(--dark-olive);
-
     text-decoration: none;
 
     font-family: "Montserrat", sans-serif;
-
-    font-size: 10px;
-
+    font-size: 13px;
+    font-weight: 700;
     letter-spacing: 3px;
 
     text-transform: uppercase;
-
-    transition: .3s;
-}
-
-.open-button:hover {
-    background: var(--olive);
-
-    color: white;
 }
 
 
@@ -237,69 +162,52 @@ section {
 
 .section {
     padding: 90px 20px;
-
     text-align: center;
 }
 
+
+/* LARGER + BOLDER */
+
 .section-title {
     font-family: "Montserrat", sans-serif;
-
-    font-size: 10px;
-
-    letter-spacing: 4px;
-
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
     color: var(--olive);
-
     text-transform: uppercase;
-
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 
 .section-heading {
     font-family: "Great Vibes", cursive;
-
     font-size: 58px;
-
     color: var(--dark-olive);
-
     margin-bottom: 25px;
 }
 
 .divider {
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     gap: 15px;
-
     margin: 25px auto;
 }
 
 .divider span {
     width: 55px;
-
     height: 1px;
-
     background: var(--gold);
 }
 
 .divider b {
     color: var(--gold);
-
     font-size: 18px;
-
-    font-weight: 400;
 }
 
 .message {
     max-width: 620px;
-
     margin: auto;
-
     font-size: 21px;
-
     line-height: 1.65;
 }
 
@@ -314,71 +222,60 @@ section {
 
 .event-grid {
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     gap: 25px;
-
     margin-top: 45px;
 }
 
 .event-card {
     background: rgba(255,255,255,.55);
-
     border: 1px solid rgba(120,128,106,.25);
-
     padding: 35px 22px;
 }
 
 .event-icon {
     font-size: 30px;
-
     color: var(--gold);
-
     margin-bottom: 15px;
 }
 
 .event-card h3 {
     font-size: 30px;
-
-    font-weight: 500;
-
+    font-weight: 700;
     color: var(--dark-olive);
 }
 
 .event-time {
     margin: 10px 0;
-
-    font-size: 18px;
-
+    font-size: 20px;
+    font-weight: 700;
     color: var(--gold);
 }
 
 .event-place {
-    font-size: 19px;
-
+    font-size: 21px;
+    font-weight: 600;
     line-height: 1.4;
-
-    min-height: 55px;
+    min-height: 60px;
 }
+
+
+/* LARGER + BOLDER */
 
 .map-button {
     display: inline-block;
-
     margin-top: 20px;
 
     text-decoration: none;
-
     color: var(--olive);
 
     border-bottom: 1px solid var(--gold);
 
-    padding-bottom: 3px;
+    padding-bottom: 5px;
 
     font-family: "Montserrat", sans-serif;
-
-    font-size: 10px;
-
+    font-size: 13px;
+    font-weight: 700;
     letter-spacing: 2px;
 
     text-transform: uppercase;
@@ -391,12 +288,11 @@ section {
 
 .countdown-section {
     background: var(--dark-olive);
-
     color: white;
 }
 
 .countdown-section .section-title {
-    color: #ddd2b7;
+    color: #e3d8bd;
 }
 
 .countdown-section .section-heading {
@@ -405,14 +301,9 @@ section {
 
 .countdown {
     display: grid;
-
     grid-template-columns: repeat(4, 1fr);
-
     max-width: 650px;
-
     margin: 45px auto 0;
-
-    gap: 10px;
 }
 
 .count-box {
@@ -420,25 +311,21 @@ section {
 }
 
 .count-number {
-    font-size: clamp(38px, 9vw, 62px);
-
-    font-weight: 300;
-
+    font-size: clamp(40px, 9vw, 62px);
+    font-weight: 400;
     line-height: 1;
 }
 
+
+/* LARGER + BOLDER */
+
 .count-label {
     font-family: "Montserrat", sans-serif;
-
-    font-size: 8px;
-
-    letter-spacing: 3px;
-
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
     text-transform: uppercase;
-
-    margin-top: 10px;
-
-    opacity: .8;
+    margin-top: 12px;
 }
 
 
@@ -447,20 +334,12 @@ section {
 ========================= */
 
 .rsvp-section {
-    background:
-        radial-gradient(
-            circle at bottom,
-            rgba(182,155,99,.10),
-            transparent 40%
-        ),
-        var(--ivory);
+    background: var(--ivory);
 }
 
 .rsvp-box {
     max-width: 600px;
-
     margin: 40px auto 0;
-
     padding: 40px 28px;
 
     background: rgba(255,255,255,.65);
@@ -471,30 +350,31 @@ section {
 }
 
 .form-group {
-    margin-bottom: 30px;
+    margin-bottom: 32px;
 }
+
+
+/* LARGER + BOLDER */
 
 .form-label {
     display: block;
 
     font-family: "Montserrat", sans-serif;
 
-    font-size: 10px;
+    font-size: 14px;
+    font-weight: 700;
 
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
+    letter-spacing: 1.5px;
 
     color: var(--dark-olive);
 
-    margin-bottom: 13px;
+    margin-bottom: 14px;
 }
 
 input[type="text"] {
     width: 100%;
 
     border: none;
-
     border-bottom: 1px solid #bbb4a4;
 
     background: transparent;
@@ -503,7 +383,7 @@ input[type="text"] {
 
     font-family: "Cormorant Garamond", serif;
 
-    font-size: 19px;
+    font-size: 21px;
 
     color: var(--text);
 
@@ -512,31 +392,26 @@ input[type="text"] {
 
 .radio-group {
     display: flex;
-
     flex-direction: column;
-
-    gap: 13px;
+    gap: 14px;
 }
 
 .radio-option {
     display: flex;
-
     align-items: center;
+    gap: 11px;
 
-    gap: 10px;
-
-    font-size: 20px;
+    font-size: 21px;
+    font-weight: 500;
 
     cursor: pointer;
-
-    padding: 4px 0;
 }
 
 .radio-option input {
     accent-color: var(--olive);
 
-    width: 17px;
-    height: 17px;
+    width: 18px;
+    height: 18px;
 }
 
 .submit-button {
@@ -548,28 +423,22 @@ input[type="text"] {
 
     color: white;
 
-    padding: 15px;
+    padding: 17px;
 
     font-family: "Montserrat", sans-serif;
 
-    font-size: 10px;
+    font-size: 13px;
+    font-weight: 700;
 
     letter-spacing: 3px;
 
     text-transform: uppercase;
 
     cursor: pointer;
-
-    transition: .3s;
-}
-
-.submit-button:hover {
-    background: var(--dark-olive);
 }
 
 .submit-button:disabled {
     opacity: .7;
-
     cursor: wait;
 }
 
@@ -592,8 +461,7 @@ input[type="text"] {
 }
 
 .success-message p {
-    font-size: 19px;
-
+    font-size: 20px;
     line-height: 1.5;
 }
 
@@ -618,20 +486,21 @@ input[type="text"] {
     color: var(--dark-olive);
 }
 
-.footer-date {
-    margin-top: 10px;
-
-    font-size: 17px;
-
-    letter-spacing: 2px;
-}
-
 .footer-heart {
     color: var(--gold);
 
     margin: 25px 0;
 
     font-size: 20px;
+}
+
+.footer-date {
+    margin-top: 10px;
+
+    font-size: 19px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
 }
 
 
@@ -649,18 +518,40 @@ input[type="text"] {
         grid-template-columns: 1fr;
     }
 
-    .countdown {
-        gap: 0;
+    .section-title {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+    }
+
+    .small-title {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+    }
+
+    .event-place {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .map-button {
+        font-size: 12px;
+        font-weight: 700;
+    }
+
+    .form-label {
+        font-size: 12px;
+        font-weight: 700;
+    }
+
+    .count-label {
+        font-size: 10px;
+        font-weight: 700;
     }
 
     .count-number {
         font-size: 38px;
-    }
-
-    .count-label {
-        font-size: 7px;
-
-        letter-spacing: 2px;
     }
 
     .rsvp-box {
@@ -681,16 +572,13 @@ input[type="text"] {
 }
 
 </style>
-
 </head>
 
 
 <body>
 
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+<!-- HERO -->
 
 <section class="hero">
 
@@ -711,30 +599,19 @@ input[type="text"] {
         <div class="hero-line"></div>
 
         <div class="hero-date">
-
             <strong>Saturday</strong>
-
             <br>
-
             10 October 2026
-
         </div>
 
         <p class="hero-verse">
-
             “Therefore what God has joined together,
             let not man separate.”
-
             <br>
-
             <em>Mark 10:9</em>
-
         </p>
 
-        <a
-            href="#welcome"
-            class="open-button"
-        >
+        <a href="#welcome" class="open-button">
             Tap to open
         </a>
 
@@ -743,15 +620,9 @@ input[type="text"] {
 </section>
 
 
+<!-- WELCOME -->
 
-<!-- =====================================================
-     WELCOME
-===================================================== -->
-
-<section
-    class="section"
-    id="welcome"
->
+<section class="section" id="welcome">
 
     <div class="container">
 
@@ -764,26 +635,20 @@ input[type="text"] {
         </div>
 
         <div class="divider">
-
             <span></span>
-
             <b>♡</b>
-
             <span></span>
-
         </div>
 
         <p class="message">
-
             With joyful hearts, we invite you
             to celebrate this beautiful beginning
             with us.
 
-            <br>
+            <br><br>
 
             Your presence would mean so much to us
             as we begin this new chapter together.
-
         </p>
 
     </div>
@@ -791,10 +656,7 @@ input[type="text"] {
 </section>
 
 
-
-<!-- =====================================================
-     LOCATIONS
-===================================================== -->
+<!-- LOCATIONS -->
 
 <section class="section events">
 
@@ -807,7 +669,6 @@ input[type="text"] {
         <div class="section-heading">
             The Celebration
         </div>
-
 
         <div class="event-grid">
 
@@ -829,13 +690,8 @@ input[type="text"] {
                 </div>
 
                 <div class="event-place">
-
-                    St. Mary & St. Athanasius Church
-
-                    <br>
-
+                    St. Mary & St. Athanasius Church,
                     Nasr City
-
                 </div>
 
                 <a
@@ -849,8 +705,7 @@ input[type="text"] {
             </div>
 
 
-
-            <!-- RECEPTION -->
+            <!-- HOTEL -->
 
             <div class="event-card">
 
@@ -867,13 +722,8 @@ input[type="text"] {
                 </div>
 
                 <div class="event-place">
-
-                    Le Méridien Cairo Airport
-
-                    <br>
-
-                    Cairo
-
+                    Le Meridien Hotel,
+                    Cairo Airport
                 </div>
 
                 <a
@@ -893,10 +743,7 @@ input[type="text"] {
 </section>
 
 
-
-<!-- =====================================================
-     COUNTDOWN
-===================================================== -->
+<!-- COUNTDOWN -->
 
 <section class="section countdown-section">
 
@@ -910,16 +757,12 @@ input[type="text"] {
             Until we say “I do”
         </div>
 
-
         <div class="countdown">
 
 
             <div class="count-box">
 
-                <div
-                    class="count-number"
-                    id="days"
-                >
+                <div class="count-number" id="days">
                     00
                 </div>
 
@@ -932,10 +775,7 @@ input[type="text"] {
 
             <div class="count-box">
 
-                <div
-                    class="count-number"
-                    id="hours"
-                >
+                <div class="count-number" id="hours">
                     00
                 </div>
 
@@ -948,10 +788,7 @@ input[type="text"] {
 
             <div class="count-box">
 
-                <div
-                    class="count-number"
-                    id="minutes"
-                >
+                <div class="count-number" id="minutes">
                     00
                 </div>
 
@@ -964,10 +801,7 @@ input[type="text"] {
 
             <div class="count-box">
 
-                <div
-                    class="count-number"
-                    id="seconds"
-                >
+                <div class="count-number" id="seconds">
                     00
                 </div>
 
@@ -984,15 +818,9 @@ input[type="text"] {
 </section>
 
 
+<!-- RSVP -->
 
-<!-- =====================================================
-     RSVP
-===================================================== -->
-
-<section
-    class="section rsvp-section"
-    id="rsvp"
->
+<section class="section rsvp-section" id="rsvp">
 
     <div class="container">
 
@@ -1005,41 +833,27 @@ input[type="text"] {
         </div>
 
         <p class="message">
-
             We would love to know if you'll be
             joining us on our special day. ❤️
-
         </p>
 
 
         <div class="rsvp-box">
 
-
-            <!--
-            GOOGLE APPS SCRIPT
-            -->
-
             <form
                 id="rsvpForm"
-
                 action="https://script.google.com/macros/s/AKfycbxfWLHT8SwmThFwbhepqMKduDYWsjWooJEFmIqGtwpJW5fZfTSaebzFjexFwSWzfcXa/exec"
-
                 method="POST"
-
                 target="hiddenFrame"
             >
 
 
-                <!-- =====================
-                     NAME
-                ====================== -->
+                <!-- NAME -->
 
                 <div class="form-group">
 
                     <label class="form-label">
-
                         Your Name ✨
-
                     </label>
 
                     <input
@@ -1052,22 +866,15 @@ input[type="text"] {
                 </div>
 
 
-
-                <!-- =====================
-                     TEAM
-                ====================== -->
+                <!-- TEAM -->
 
                 <div class="form-group">
 
                     <label class="form-label">
-
                         Your side of the love story? ❤️
-
                     </label>
 
-
                     <div class="radio-group">
-
 
                         <label class="radio-option">
 
@@ -1095,28 +902,20 @@ input[type="text"] {
 
                         </label>
 
-
                     </div>
 
                 </div>
 
 
-
-                <!-- =====================
-                     ATTENDANCE
-                ====================== -->
+                <!-- ATTENDANCE -->
 
                 <div class="form-group">
 
                     <label class="form-label">
-
                         Will you attend our wedding? 🤍
-
                     </label>
 
-
                     <div class="radio-group">
-
 
                         <label class="radio-option">
 
@@ -1144,35 +943,23 @@ input[type="text"] {
 
                         </label>
 
-
                     </div>
 
                 </div>
 
-
-
-                <!-- =====================
-                     SUBMIT
-                ====================== -->
 
                 <button
                     type="submit"
                     class="submit-button"
                     id="submitButton"
                 >
-
                     Send RSVP
-
                 </button>
-
 
             </form>
 
 
-
-            <!-- =====================
-                 THANK YOU
-            ====================== -->
+            <!-- SUCCESS MESSAGE -->
 
             <div
                 class="success-message"
@@ -1184,17 +971,12 @@ input[type="text"] {
                 </h3>
 
                 <p>
-
                     Your RSVP has been received.
-
                     <br>
-
                     We can't wait to celebrate with you!
-
                 </p>
 
             </div>
-
 
         </div>
 
@@ -1203,10 +985,7 @@ input[type="text"] {
 </section>
 
 
-
-<!-- =====================================================
-     HIDDEN IFRAME
-===================================================== -->
+<!-- HIDDEN FRAME -->
 
 <iframe
     name="hiddenFrame"
@@ -1215,10 +994,7 @@ input[type="text"] {
 ></iframe>
 
 
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+<!-- FOOTER -->
 
 <footer class="footer">
 
@@ -1237,23 +1013,11 @@ input[type="text"] {
 </footer>
 
 
-
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
 <script>
 
-
-/* =====================================================
+/* =========================
    COUNTDOWN
-===================================================== */
-
-/*
-   Wedding:
-   10 October 2026
-   6:00 PM
-*/
+========================= */
 
 const weddingDate =
     new Date("2026-10-10T18:00:00+03:00").getTime();
@@ -1271,11 +1035,8 @@ function updateCountdown() {
     if (distance <= 0) {
 
         document.getElementById("days").innerText = "00";
-
         document.getElementById("hours").innerText = "00";
-
         document.getElementById("minutes").innerText = "00";
-
         document.getElementById("seconds").innerText = "00";
 
         return;
@@ -1319,34 +1080,25 @@ function updateCountdown() {
     document.getElementById("days").innerText =
         String(days).padStart(2, "0");
 
-
     document.getElementById("hours").innerText =
         String(hours).padStart(2, "0");
-
 
     document.getElementById("minutes").innerText =
         String(minutes).padStart(2, "0");
 
-
     document.getElementById("seconds").innerText =
         String(seconds).padStart(2, "0");
-
 }
 
 
 updateCountdown();
 
-
-setInterval(
-    updateCountdown,
-    1000
-);
+setInterval(updateCountdown, 1000);
 
 
-
-/* =====================================================
+/* =========================
    RSVP
-===================================================== */
+========================= */
 
 const form =
     document.getElementById("rsvpForm");
@@ -1368,11 +1120,6 @@ form.addEventListener(
             "Sending...";
 
 
-        /*
-           Give Google Apps Script
-           time to receive the RSVP.
-        */
-
         setTimeout(
             function() {
 
@@ -1390,7 +1137,6 @@ form.addEventListener(
 );
 
 </script>
-
 
 </body>
 </html>
