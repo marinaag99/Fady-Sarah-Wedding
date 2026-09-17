@@ -12,6 +12,9 @@
 
 <title>Fady & Sarah | Wedding</title>
 
+
+<!-- GOOGLE FONTS -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
 <link
@@ -29,98 +32,123 @@
 <style>
 
 /* =====================================================
-   BASIC
+   COLORS
+===================================================== */
+
+:root {
+
+    --ivory: #f8f4eb;
+
+    --cream: #eee7d8;
+
+    --olive: #78806a;
+
+    --dark-olive: #50563e;
+
+    --gold: #b69b63;
+
+    --text: #4d4a42;
+
+}
+
+
+/* =====================================================
+   RESET
 ===================================================== */
 
 * {
+
     box-sizing: border-box;
+
     margin: 0;
+
     padding: 0;
+
 }
+
 
 html {
+
     scroll-behavior: smooth;
+
 }
 
+
 body {
-    background: #f8f4eb;
-    color: #4d4a42;
+
+    background: var(--ivory);
+
+    color: var(--text);
+
     font-family: "Cormorant Garamond", serif;
+
     overflow-x: hidden;
+
 }
 
 
 /* =====================================================
-   LOCK THE PAGE BEFORE TAP TO OPEN
+   LOCK PAGE BEFORE TAP TO OPEN
 ===================================================== */
 
 body.locked {
+
     overflow: hidden;
+
     height: 100vh;
+
     height: 100dvh;
+
 }
 
 
 /* =====================================================
-   OPENING SCREEN
+   FIRST OPENING SCREEN
 ===================================================== */
 
 .hero {
 
     min-height: 100vh;
+
     min-height: 100dvh;
 
     position: relative;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
 
     padding: 40px 20px;
 
+
     /*
-       YOUR UPLOADED BACKGROUND IMAGE
+       BACKGROUND IMAGE
+
+       The image is kept completely visible.
+       It will not be cropped.
     */
 
+    background-color: #f8f4eb;
+
     background-image:
+
         linear-gradient(
-            rgba(248, 244, 235, 0.08),
-            rgba(248, 244, 235, 0.08)
+            rgba(248, 244, 235, 0.03),
+            rgba(248, 244, 235, 0.03)
         ),
+
         url("opening-background.jpeg");
 
-    background-size: cover;
+
+    background-size: contain;
 
     background-position: center center;
 
     background-repeat: no-repeat;
-
-}
-
-
-/* =====================================================
-   SLIGHT OVERLAY
-   Keeps the text readable without changing
-   the actual image.
-===================================================== */
-
-.hero::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            rgba(255,255,255,0.03),
-            rgba(255,255,255,0.03)
-        );
-
-    pointer-events: none;
 
 }
 
@@ -137,7 +165,7 @@ body.locked {
 
     width: 100%;
 
-    max-width: 650px;
+    max-width: 700px;
 
     display: flex;
 
@@ -160,7 +188,7 @@ body.locked {
 
     align-items: center;
 
-    margin-bottom: 18px;
+    margin: 0 auto 18px;
 
 }
 
@@ -169,11 +197,13 @@ body.locked {
 
     width: 125px;
 
-    max-width: 32vw;
+    max-width: 30vw;
 
     height: auto;
 
     display: block;
+
+    object-fit: contain;
 
 }
 
@@ -273,7 +303,7 @@ body.locked {
 
 
 /* =====================================================
-   VERSE
+   BIBLE VERSE
 ===================================================== */
 
 .hero-verse {
@@ -301,7 +331,7 @@ body.locked {
 
 
 /* =====================================================
-   TAP TO OPEN
+   TAP TO OPEN BUTTON
 ===================================================== */
 
 .open-button {
@@ -337,13 +367,13 @@ body.locked {
 
     background: #50563e;
 
-    color: #fff;
+    color: white;
 
 }
 
 
 /* =====================================================
-   HIDDEN INVITATION CONTENT
+   HIDE ALL CONTENT UNTIL TAP
 ===================================================== */
 
 #invitationContent {
@@ -410,7 +440,7 @@ body.locked {
 
 
 /* =====================================================
-   TITLES
+   SECTION TITLES
 ===================================================== */
 
 .section-title {
@@ -431,6 +461,10 @@ body.locked {
 
 }
 
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
 
 .section-heading {
 
@@ -577,6 +611,10 @@ body.locked {
 
 }
 
+
+/* =====================================================
+   MAP BUTTON
+===================================================== */
 
 .map-button {
 
@@ -730,6 +768,10 @@ body.locked {
 }
 
 
+/* =====================================================
+   NAME INPUT
+===================================================== */
+
 input[type="text"] {
 
     width: 100%;
@@ -750,6 +792,10 @@ input[type="text"] {
 
 }
 
+
+/* =====================================================
+   RADIO OPTIONS
+===================================================== */
 
 .radio-group {
 
@@ -789,7 +835,7 @@ input[type="text"] {
 
 
 /* =====================================================
-   RSVP BUTTON
+   RSVP SUBMIT
 ===================================================== */
 
 .submit-button {
@@ -823,11 +869,13 @@ input[type="text"] {
 
     opacity: .7;
 
+    cursor: wait;
+
 }
 
 
 /* =====================================================
-   SUCCESS
+   RSVP SUCCESS MESSAGE
 ===================================================== */
 
 .success-message {
@@ -913,11 +961,36 @@ input[type="text"] {
 
 @media (max-width: 650px) {
 
+
+    /*
+       IMPORTANT:
+
+       "contain" keeps the ENTIRE floral image visible
+       instead of cropping the left/right flowers.
+    */
+
     .hero {
+
+        min-height: 100vh;
+
+        min-height: 100dvh;
 
         padding: 30px 18px;
 
+        background-size: contain;
+
         background-position: center center;
+
+        background-repeat: no-repeat;
+
+        background-color: #f8f4eb;
+
+    }
+
+
+    .hero-inner {
+
+        max-width: 360px;
 
     }
 
@@ -925,6 +998,8 @@ input[type="text"] {
     .monogram img {
 
         width: 115px;
+
+        max-width: 30vw;
 
     }
 
@@ -935,12 +1010,21 @@ input[type="text"] {
 
         letter-spacing: 2px;
 
+        margin-bottom: 15px;
+
     }
 
 
     .names {
 
         font-size: 68px;
+
+    }
+
+
+    .hero-line {
+
+        margin: 17px auto;
 
     }
 
@@ -958,6 +1042,15 @@ input[type="text"] {
 
         max-width: 340px;
 
+        margin-top: 17px;
+
+    }
+
+
+    .hero-verse em {
+
+        font-size: 15px;
+
     }
 
 
@@ -966,6 +1059,38 @@ input[type="text"] {
         margin-top: 25px;
 
         padding: 14px 30px;
+
+        font-size: 11px;
+
+    }
+
+
+    .section {
+
+        padding: 70px 18px;
+
+    }
+
+
+    .section-title {
+
+        font-size: 11px;
+
+        letter-spacing: 2.5px;
+
+    }
+
+
+    .section-heading {
+
+        font-size: 50px;
+
+    }
+
+
+    .message {
+
+        font-size: 19px;
 
     }
 
@@ -977,9 +1102,9 @@ input[type="text"] {
     }
 
 
-    .section-heading {
+    .event-place {
 
-        font-size: 50px;
+        font-size: 19px;
 
     }
 
@@ -1006,14 +1131,16 @@ input[type="text"] {
 
     }
 
+
 }
 
 
 /* =====================================================
-   SMALL PHONES
+   VERY SMALL PHONES
 ===================================================== */
 
 @media (max-width: 380px) {
+
 
     .monogram img {
 
@@ -1042,6 +1169,14 @@ input[type="text"] {
 
     }
 
+
+    .count-number {
+
+        font-size: 32px;
+
+    }
+
+
 }
 
 </style>
@@ -1054,13 +1189,16 @@ input[type="text"] {
 
 
 <!-- =====================================================
-     FIRST SCREEN
+     FIRST OPENING SCREEN
 ===================================================== -->
 
 <section class="hero">
 
+
     <div class="hero-inner">
 
+
+        <!-- MONOGRAM -->
 
         <div class="monogram">
 
@@ -1072,12 +1210,16 @@ input[type="text"] {
         </div>
 
 
+        <!-- SMALL TITLE -->
+
         <div class="small-title">
 
             Together with their families
 
         </div>
 
+
+        <!-- NAMES -->
 
         <div class="names">
 
@@ -1086,8 +1228,12 @@ input[type="text"] {
         </div>
 
 
+        <!-- GOLD LINE -->
+
         <div class="hero-line"></div>
 
+
+        <!-- DATE -->
 
         <div class="hero-date">
 
@@ -1100,6 +1246,8 @@ input[type="text"] {
         </div>
 
 
+        <!-- VERSE -->
+
         <p class="hero-verse">
 
             “Therefore what God has joined together,
@@ -1111,6 +1259,8 @@ input[type="text"] {
 
         </p>
 
+
+        <!-- TAP TO OPEN -->
 
         <button
             type="button"
@@ -1131,10 +1281,11 @@ input[type="text"] {
 
 <!-- =====================================================
      INVITATION CONTENT
-     HIDDEN UNTIL TAP
+     HIDDEN UNTIL TAP TO OPEN
 ===================================================== -->
 
 <div id="invitationContent">
+
 
 
 <!-- =====================================================
@@ -1220,7 +1371,10 @@ input[type="text"] {
         <div class="event-grid">
 
 
+            <!-- CHURCH -->
+
             <div class="event-card">
+
 
                 <div class="event-icon">
 
@@ -1262,11 +1416,15 @@ input[type="text"] {
 
                 </a>
 
+
             </div>
 
 
 
+            <!-- RECEPTION -->
+
             <div class="event-card">
+
 
                 <div class="event-icon">
 
@@ -1308,10 +1466,12 @@ input[type="text"] {
 
                 </a>
 
+
             </div>
 
 
         </div>
+
 
     </div>
 
@@ -1345,6 +1505,8 @@ input[type="text"] {
         <div class="countdown">
 
 
+            <!-- DAYS -->
+
             <div class="count-box">
 
                 <div
@@ -1356,6 +1518,7 @@ input[type="text"] {
 
                 </div>
 
+
                 <div class="count-label">
 
                     Days
@@ -1364,6 +1527,8 @@ input[type="text"] {
 
             </div>
 
+
+            <!-- HOURS -->
 
             <div class="count-box">
 
@@ -1376,6 +1541,7 @@ input[type="text"] {
 
                 </div>
 
+
                 <div class="count-label">
 
                     Hours
@@ -1384,6 +1550,8 @@ input[type="text"] {
 
             </div>
 
+
+            <!-- MINUTES -->
 
             <div class="count-box">
 
@@ -1396,6 +1564,7 @@ input[type="text"] {
 
                 </div>
 
+
                 <div class="count-label">
 
                     Minutes
@@ -1404,6 +1573,8 @@ input[type="text"] {
 
             </div>
 
+
+            <!-- SECONDS -->
 
             <div class="count-box">
 
@@ -1416,6 +1587,7 @@ input[type="text"] {
 
                 </div>
 
+
                 <div class="count-label">
 
                     Seconds
@@ -1426,6 +1598,7 @@ input[type="text"] {
 
 
         </div>
+
 
     </div>
 
@@ -1482,6 +1655,7 @@ input[type="text"] {
 
                 <div class="form-group">
 
+
                     <label class="form-label">
 
                         Your Name ✨
@@ -1496,6 +1670,7 @@ input[type="text"] {
                         required
                     >
 
+
                 </div>
 
 
@@ -1503,6 +1678,7 @@ input[type="text"] {
                 <!-- TEAM -->
 
                 <div class="form-group">
+
 
                     <label class="form-label">
 
@@ -1516,6 +1692,7 @@ input[type="text"] {
 
                         <label class="radio-option">
 
+
                             <input
                                 type="radio"
                                 name="team"
@@ -1523,12 +1700,16 @@ input[type="text"] {
                                 required
                             >
 
+
                             🤵 Team Groom
+
 
                         </label>
 
 
+
                         <label class="radio-option">
+
 
                             <input
                                 type="radio"
@@ -1536,12 +1717,15 @@ input[type="text"] {
                                 value="Team Bride"
                             >
 
+
                             👰 Team Bride
+
 
                         </label>
 
 
                     </div>
+
 
                 </div>
 
@@ -1550,6 +1734,7 @@ input[type="text"] {
                 <!-- ATTENDANCE -->
 
                 <div class="form-group">
+
 
                     <label class="form-label">
 
@@ -1563,6 +1748,7 @@ input[type="text"] {
 
                         <label class="radio-option">
 
+
                             <input
                                 type="radio"
                                 name="attendance"
@@ -1570,12 +1756,16 @@ input[type="text"] {
                                 required
                             >
 
+
                             Absolutely! 💃🏻🕺🏻
+
 
                         </label>
 
 
+
                         <label class="radio-option">
+
 
                             <input
                                 type="radio"
@@ -1583,16 +1773,21 @@ input[type="text"] {
                                 value="Sorry, I can't make it"
                             >
 
+
                             Sorry, I can't make it
+
 
                         </label>
 
 
                     </div>
 
+
                 </div>
 
 
+
+                <!-- SUBMIT -->
 
                 <button
                     type="submit"
@@ -1609,12 +1804,13 @@ input[type="text"] {
 
 
 
-            <!-- SUCCESS -->
+            <!-- SUCCESS MESSAGE -->
 
             <div
                 class="success-message"
                 id="successMessage"
             >
+
 
                 <h3>
 
@@ -1633,6 +1829,7 @@ input[type="text"] {
 
                 </p>
 
+
             </div>
 
 
@@ -1646,7 +1843,7 @@ input[type="text"] {
 
 
 <!-- =====================================================
-     HIDDEN GOOGLE FORM FRAME
+     HIDDEN FORM FRAME
 ===================================================== -->
 
 <iframe
@@ -1662,6 +1859,7 @@ input[type="text"] {
 ===================================================== -->
 
 <footer class="footer">
+
 
     <div class="footer-names">
 
@@ -1683,10 +1881,13 @@ input[type="text"] {
 
     </div>
 
+
 </footer>
 
 
+
 </div>
+<!-- END INVITATION CONTENT -->
 
 
 
@@ -1709,34 +1910,48 @@ openInvitation.addEventListener(
     function () {
 
 
-        /* Unlock page */
+        /*
+           Unlock scrolling
+        */
 
         document.body.classList.remove("locked");
 
 
-        /* Show invitation */
+        /*
+           Show the hidden content
+        */
 
         invitationContent.style.display = "block";
 
 
+        /*
+           Start the reveal animation
+        */
+
         requestAnimationFrame(function () {
 
-
-            /* Start reveal animation */
 
             invitationContent.classList.add("reveal");
 
 
-            /* Scroll smoothly to welcome */
+            /*
+               Smoothly move to the
+               beginning of the invitation
+            */
 
             setTimeout(function () {
+
 
                 document
                     .getElementById("welcome")
                     .scrollIntoView({
+
                         behavior: "smooth",
+
                         block: "start"
+
                     });
+
 
             }, 100);
 
@@ -1753,9 +1968,11 @@ openInvitation.addEventListener(
 ===================================================== */
 
 const weddingDate =
+
     new Date(
         "2026-10-10T18:00:00+03:00"
     ).getTime();
+
 
 
 function updateCountdown() {
@@ -1769,29 +1986,56 @@ function updateCountdown() {
         weddingDate - now;
 
 
+    /*
+       Wedding day reached
+    */
+
     if (distance <= 0) {
 
-        document.getElementById("days").innerText = "00";
 
-        document.getElementById("hours").innerText = "00";
+        document
+            .getElementById("days")
+            .innerText = "00";
 
-        document.getElementById("minutes").innerText = "00";
 
-        document.getElementById("seconds").innerText = "00";
+        document
+            .getElementById("hours")
+            .innerText = "00";
+
+
+        document
+            .getElementById("minutes")
+            .innerText = "00";
+
+
+        document
+            .getElementById("seconds")
+            .innerText = "00";
+
 
         return;
 
     }
 
 
+    /*
+       DAYS
+    */
+
     const days =
+
         Math.floor(
             distance /
             (1000 * 60 * 60 * 24)
         );
 
 
+    /*
+       HOURS
+    */
+
     const hours =
+
         Math.floor(
             (
                 distance %
@@ -1802,7 +2046,12 @@ function updateCountdown() {
         );
 
 
+    /*
+       MINUTES
+    */
+
     const minutes =
+
         Math.floor(
             (
                 distance %
@@ -1813,7 +2062,12 @@ function updateCountdown() {
         );
 
 
+    /*
+       SECONDS
+    */
+
     const seconds =
+
         Math.floor(
             (
                 distance %
@@ -1824,25 +2078,46 @@ function updateCountdown() {
         );
 
 
-    document.getElementById("days").innerText =
+    /*
+       DISPLAY
+    */
+
+    document
+        .getElementById("days")
+        .innerText =
         String(days).padStart(2, "0");
 
 
-    document.getElementById("hours").innerText =
+    document
+        .getElementById("hours")
+        .innerText =
         String(hours).padStart(2, "0");
 
 
-    document.getElementById("minutes").innerText =
+    document
+        .getElementById("minutes")
+        .innerText =
         String(minutes).padStart(2, "0");
 
 
-    document.getElementById("seconds").innerText =
+    document
+        .getElementById("seconds")
+        .innerText =
         String(seconds).padStart(2, "0");
 
 }
 
 
+/*
+   Start immediately
+*/
+
 updateCountdown();
+
+
+/*
+   Update every second
+*/
 
 setInterval(
     updateCountdown,
@@ -1872,19 +2147,40 @@ form.addEventListener(
     function () {
 
 
+        /*
+           Disable button
+        */
+
         submitButton.disabled = true;
+
+
+        /*
+           Show sending state
+        */
 
         submitButton.innerText =
             "Sending...";
 
 
+        /*
+           Wait for Apps Script
+        */
+
         setTimeout(
             function () {
 
 
+                /*
+                   Hide form
+                */
+
                 form.style.display =
                     "none";
 
+
+                /*
+                   Show confirmation
+                */
 
                 successMessage.style.display =
                     "block";
