@@ -33,9 +33,10 @@ body.locked {
     overflow: hidden;
 }
 
-/* =========================
-   OPENING SCREEN
-========================= */
+
+/* =====================================================
+   FRONT COVER
+===================================================== */
 
 .hero {
     width: 100%;
@@ -53,7 +54,8 @@ body.locked {
     overflow: hidden;
 }
 
-/* ORIGINAL IMAGE - NEVER CROPPED */
+
+/* ORIGINAL BACKGROUND IMAGE */
 
 .hero-image {
     position: absolute;
@@ -65,9 +67,12 @@ body.locked {
     object-position: center center;
 
     display: block;
+
+    z-index: 1;
 }
 
-/* slight overlay so button is readable */
+
+/* VERY LIGHT OVERLAY */
 
 .hero-overlay {
     position: absolute;
@@ -78,26 +83,67 @@ body.locked {
     z-index: 2;
 }
 
-/* TAP BUTTON */
+
+/* NAMES ON FRONT */
+
+.cover-names {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 4;
+
+    width: 90%;
+
+    text-align: center;
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: clamp(60px, 11vw, 110px);
+
+    font-weight: 400;
+
+    line-height: 1.05;
+
+    color: #59634f;
+
+    text-shadow:
+        0 1px 1px rgba(255,255,255,0.7),
+        0 3px 10px rgba(0,0,0,0.08);
+
+    white-space: nowrap;
+}
+
+
+/* TAP TO OPEN */
 
 .open-button {
     position: absolute;
 
-    bottom: 8%;
+    left: 50%;
+    bottom: 9%;
+
+    transform: translateX(-50%);
 
     z-index: 5;
 
-    padding: 13px 34px;
+    padding: 12px 32px;
 
-    border: 1px solid rgba(89, 99, 79, 0.7);
+    border: 1px solid rgba(89, 99, 79, 0.65);
+
     border-radius: 40px;
 
-    background: rgba(248, 244, 235, 0.88);
+    background: rgba(248, 244, 235, 0.9);
 
     color: #59634f;
 
     font-family: "Cormorant Garamond", serif;
+
     font-size: 19px;
+
     letter-spacing: 2px;
 
     cursor: pointer;
@@ -112,9 +158,10 @@ body.locked {
     color: white;
 }
 
-/* =========================
+
+/* =====================================================
    INVITATION CONTENT
-========================= */
+===================================================== */
 
 #invitationContent {
     display: none;
@@ -124,9 +171,10 @@ body.locked {
     display: block;
 }
 
-/* =========================
+
+/* =====================================================
    WELCOME
-========================= */
+===================================================== */
 
 .welcome {
     min-height: 100vh;
@@ -146,56 +194,75 @@ body.locked {
 .monogram {
     width: 130px;
     max-width: 40vw;
+
     margin-bottom: 25px;
 }
 
 .welcome-small {
     font-size: 18px;
+
     letter-spacing: 3px;
+
     text-transform: uppercase;
+
     margin-bottom: 12px;
 }
 
 .names {
     font-family: "Great Vibes", cursive;
+
     font-size: clamp(55px, 12vw, 100px);
+
     font-weight: 400;
+
     color: #59634f;
+
     line-height: 1;
 }
 
 .welcome-date {
     margin-top: 25px;
+
     font-size: 23px;
+
     letter-spacing: 3px;
 }
 
-/* =========================
+
+/* =====================================================
    GENERAL SECTIONS
-========================= */
+===================================================== */
 
 .section {
     padding: 80px 22px;
+
     text-align: center;
+
     max-width: 850px;
+
     margin: auto;
 }
 
 .section-title {
     font-family: "Great Vibes", cursive;
+
     font-size: 55px;
+
     color: #59634f;
+
     margin-bottom: 25px;
 }
 
 .section-text {
     font-size: 20px;
+
     line-height: 1.7;
 }
 
-/* =========================
+
+/* =====================================================
    DETAILS
-========================= */
+===================================================== */
 
 .details-card {
     background: rgba(255,255,255,0.45);
@@ -213,6 +280,7 @@ body.locked {
 
 .details-card h3 {
     font-size: 28px;
+
     font-weight: 600;
 
     margin-bottom: 10px;
@@ -220,6 +288,7 @@ body.locked {
 
 .details-card p {
     font-size: 20px;
+
     line-height: 1.6;
 }
 
@@ -233,22 +302,28 @@ body.locked {
     border-radius: 30px;
 
     background: #59634f;
+
     color: white;
 
     text-decoration: none;
 
     font-size: 17px;
+
     letter-spacing: 1px;
 }
 
-/* =========================
+
+/* =====================================================
    COUNTDOWN
-========================= */
+===================================================== */
 
 .countdown {
     display: flex;
+
     justify-content: center;
+
     gap: 15px;
+
     flex-wrap: wrap;
 
     margin-top: 30px;
@@ -270,18 +345,22 @@ body.locked {
     display: block;
 
     font-size: 30px;
+
     font-weight: 600;
 }
 
 .time-label {
     font-size: 14px;
+
     letter-spacing: 1px;
+
     text-transform: uppercase;
 }
 
-/* =========================
+
+/* =====================================================
    RSVP
-========================= */
+===================================================== */
 
 .rsvp {
     padding: 80px 22px;
@@ -293,6 +372,7 @@ body.locked {
 
 .rsvp-form {
     max-width: 600px;
+
     margin: auto;
 
     text-align: left;
@@ -316,11 +396,13 @@ body.locked {
     padding: 14px 16px;
 
     border: 1px solid rgba(89,99,79,0.35);
+
     border-radius: 10px;
 
     background: white;
 
     font-family: inherit;
+
     font-size: 18px;
 }
 
@@ -354,12 +436,15 @@ body.locked {
     padding: 13px 40px;
 
     border: none;
+
     border-radius: 30px;
 
     background: #59634f;
+
     color: white;
 
     font-family: inherit;
+
     font-size: 19px;
 
     cursor: pointer;
@@ -377,9 +462,10 @@ body.locked {
     color: #59634f;
 }
 
-/* =========================
+
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
 footer {
     padding: 40px 20px;
@@ -391,9 +477,10 @@ footer {
     font-size: 17px;
 }
 
-/* =========================
+
+/* =====================================================
    MOBILE
-========================= */
+===================================================== */
 
 @media (max-width: 650px) {
 
@@ -404,19 +491,29 @@ footer {
         background: #f8f4eb;
     }
 
-    /*
-       CONTAIN = THE ENTIRE ORIGINAL IMAGE
-       IS ALWAYS VISIBLE.
-       NOTHING IS CROPPED.
-    */
 
     .hero-image {
         width: 100%;
         height: 100%;
 
         object-fit: contain;
+
         object-position: center center;
     }
+
+
+    /* FRONT NAMES */
+
+    .cover-names {
+        font-size: 64px;
+
+        width: 95%;
+
+        top: 50%;
+    }
+
+
+    /* OPEN BUTTON */
 
     .open-button {
         bottom: 6%;
@@ -426,49 +523,61 @@ footer {
         font-size: 17px;
     }
 
+
     .monogram {
         width: 105px;
     }
+
 
     .welcome-small {
         font-size: 15px;
     }
 
+
     .names {
         font-size: 65px;
     }
+
 
     .welcome-date {
         font-size: 19px;
     }
 
+
     .section {
         padding: 65px 20px;
     }
+
 
     .section-title {
         font-size: 48px;
     }
 
+
     .section-text {
         font-size: 18px;
     }
+
 
     .details-card {
         padding: 28px 18px;
     }
 
+
     .details-card h3 {
         font-size: 25px;
     }
+
 
     .details-card p {
         font-size: 18px;
     }
 
+
     .time-box {
         min-width: 68px;
     }
+
 
     .time-number {
         font-size: 26px;
@@ -483,20 +592,30 @@ footer {
 <body class="locked">
 
 
-<!-- =========================
-     OPENING SCREEN
-========================= -->
+<!-- =====================================================
+     FRONT COVER
+===================================================== -->
 
-<section class="hero">
+<section class="hero" id="cover">
 
+    <!-- YOUR EXACT IMAGE -->
     <img
         src="./opening-background.jpeg"
         alt=""
         class="hero-image"
     >
 
+
     <div class="hero-overlay"></div>
 
+
+    <!-- ONLY NAMES -->
+    <div class="cover-names">
+        Fady &amp; Sarah
+    </div>
+
+
+    <!-- TAP TO OPEN -->
     <button
         class="open-button"
         id="openInvitation"
@@ -509,9 +628,9 @@ footer {
 
 
 
-<!-- =========================
-     INVITATION
-========================= -->
+<!-- =====================================================
+     FULL INVITATION
+===================================================== -->
 
 <div id="invitationContent">
 
@@ -551,10 +670,14 @@ footer {
         </h2>
 
         <p class="section-text">
+
             We are so excited to celebrate this beautiful beginning
             surrounded by the people we love.
+
             <br><br>
+
             Your presence would mean so much to us.
+
         </p>
 
     </section>
@@ -576,14 +699,21 @@ footer {
             </h3>
 
             <p>
+
                 Saturday, 10 October 2026
+
                 <br>
+
                 6:00 PM
+
                 <br><br>
 
                 St. Mary &amp; St. Athanasius Church
+
                 <br>
+
                 Nasr City
+
             </p>
 
             <a
@@ -615,14 +745,21 @@ footer {
             </h3>
 
             <p>
+
                 Saturday, 10 October 2026
+
                 <br>
+
                 7:30 PM
+
                 <br><br>
 
                 Le Meridien Hotel
+
                 <br>
+
                 Cairo Airport
+
             </p>
 
             <a
@@ -650,6 +787,7 @@ footer {
         <div class="countdown">
 
             <div class="time-box">
+
                 <span
                     class="time-number"
                     id="days"
@@ -660,10 +798,12 @@ footer {
                 <span class="time-label">
                     Days
                 </span>
+
             </div>
 
 
             <div class="time-box">
+
                 <span
                     class="time-number"
                     id="hours"
@@ -674,10 +814,12 @@ footer {
                 <span class="time-label">
                     Hours
                 </span>
+
             </div>
 
 
             <div class="time-box">
+
                 <span
                     class="time-number"
                     id="minutes"
@@ -688,10 +830,12 @@ footer {
                 <span class="time-label">
                     Minutes
                 </span>
+
             </div>
 
 
             <div class="time-box">
+
                 <span
                     class="time-number"
                     id="seconds"
@@ -702,6 +846,7 @@ footer {
                 <span class="time-label">
                     Seconds
                 </span>
+
             </div>
 
         </div>
@@ -718,6 +863,7 @@ footer {
             RSVP
         </h2>
 
+
         <form
             class="rsvp-form"
             id="rsvpForm"
@@ -726,7 +872,6 @@ footer {
             target="hidden_iframe"
         >
 
-            <!-- NAME -->
 
             <div class="form-group">
 
@@ -745,13 +890,12 @@ footer {
 
 
 
-            <!-- SIDE -->
-
             <div class="form-group">
 
                 <label>
                     Your side of the love story? ❤️
                 </label>
+
 
                 <label class="option">
 
@@ -782,8 +926,6 @@ footer {
             </div>
 
 
-
-            <!-- ATTENDANCE -->
 
             <div class="form-group">
 
@@ -843,8 +985,6 @@ footer {
 
 
 
-    <!-- FOOTER -->
-
     <footer>
 
         Fady &amp; Sarah
@@ -860,7 +1000,7 @@ footer {
 
 
 
-<!-- Hidden iframe for RSVP -->
+<!-- HIDDEN RSVP FRAME -->
 
 <iframe
     name="hidden_iframe"
@@ -872,9 +1012,9 @@ footer {
 
 <script>
 
-/* =========================
+/* =====================================================
    OPEN INVITATION
-========================= */
+===================================================== */
 
 const openButton =
     document.getElementById("openInvitation");
@@ -882,30 +1022,49 @@ const openButton =
 const invitationContent =
     document.getElementById("invitationContent");
 
+const cover =
+    document.getElementById("cover");
+
 
 openButton.addEventListener("click", function () {
 
+    /*
+       Unlock scrolling
+    */
+
     document.body.classList.remove("locked");
+
+
+    /*
+       Hide the front cover
+    */
+
+    cover.style.display = "none";
+
+
+    /*
+       Show full invitation
+    */
 
     invitationContent.classList.add("reveal");
 
-    setTimeout(function () {
 
-        document
-            .getElementById("welcome")
-            .scrollIntoView({
-                behavior: "smooth"
-            });
+    /*
+       Start at the welcome section
+    */
 
-    }, 100);
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 
 });
 
 
 
-/* =========================
+/* =====================================================
    COUNTDOWN
-========================= */
+===================================================== */
 
 const weddingDate =
     new Date("2026-10-10T18:00:00+03:00");
@@ -922,8 +1081,11 @@ function updateCountdown() {
     if (difference <= 0) {
 
         document.getElementById("days").textContent = "0";
+
         document.getElementById("hours").textContent = "0";
+
         document.getElementById("minutes").textContent = "0";
+
         document.getElementById("seconds").textContent = "0";
 
         return;
@@ -975,9 +1137,9 @@ setInterval(updateCountdown, 1000);
 
 
 
-/* =========================
-   RSVP THANK YOU
-========================= */
+/* =====================================================
+   RSVP
+===================================================== */
 
 const rsvpForm =
     document.getElementById("rsvpForm");
