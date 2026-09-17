@@ -12,97 +12,50 @@ content="width=device-width, initial-scale=1.0">
 
 <style>
 
+/* ================================
+   PAGE
+================================ */
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-html {
-    scroll-behavior: smooth;
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #eee4d2;
 }
 
 body {
-    background: #d8cbb8;
-    margin: 0;
-    padding: 0;
+    overflow-x: hidden;
 }
 
 
-/* =========================================
-   MAIN WEBSITE
-========================================= */
-
-.website {
-    width: 100%;
-    max-width: 1024px;
-    margin: auto;
-    position: relative;
-}
-
-
-/* =========================================
-   OPENING IMAGE
-========================================= */
-
-.opening {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    min-height: 650px;
-    overflow: hidden;
-    cursor: default;
-}
-
-.opening img {
-    position: absolute;
-
-    width: 100%;
-
-    height: auto;
-
-    left: 0;
-    top: 0;
-}
-
-
-/* Dark transparent clickable area */
-
-.open-button {
-
-    position: absolute;
-
-    left: 35%;
-    top: 75%;
-
-    width: 30%;
-    height: 8%;
-
-    border: none;
-
-    background: transparent;
-
-    cursor: pointer;
-
-    z-index: 10;
-}
-
-
-/* =========================================
-   FULL INVITATION
-========================================= */
+/* ================================
+   MAIN INVITATION
+================================ */
 
 .invitation {
-
     position: relative;
 
     width: 100%;
 
-    display: none;
+    max-width: 1024px;
+
+    margin: 0 auto;
+
+    line-height: 0;
 }
 
 
-/* Exact image */
+/* ================================
+   EXACT ORIGINAL IMAGE
+================================ */
 
 .invitation-image {
 
@@ -111,181 +64,257 @@ body {
     width: 100%;
 
     height: auto;
+
+    margin: 0;
+
+    padding: 0;
+
 }
 
 
-/* =========================================
+/* ================================
    LIVE COUNTDOWN
-========================================= */
-
+================================ */
 
 /*
-   These cover the static countdown numbers
-   that are already inside the artwork.
+   IMPORTANT:
+   No background is used here.
+   The original countdown boxes from
+   the artwork remain visible.
 */
 
 .live-countdown {
 
     position: absolute;
 
-    left: 17%;
-    top: 66.3%;
+    left: 19.3%;
 
-    width: 66%;
+    top: 67.55%;
+
+    width: 61.4%;
+
+    height: 4.8%;
 
     display: flex;
 
+    align-items: center;
+
     justify-content: space-between;
 
+    z-index: 5;
+
     pointer-events: none;
+
 }
 
 
 .count-number {
 
-    width: 22%;
+    width: 23%;
 
-    text-align: center;
+    height: 100%;
 
-    font-family: Georgia, serif;
+    display: flex;
 
-    font-size: clamp(20px, 4vw, 43px);
+    align-items: center;
 
-    color: #655536;
+    justify-content: center;
+
+    background: transparent;
+
+    color: #5e5138;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(
+        24px,
+        4.1vw,
+        42px
+    );
+
+    font-weight: 400;
 
     line-height: 1;
 
-    background: rgba(242,232,214,0.96);
-
-    padding: 4px 2px;
-
-    border-radius: 2px;
+    text-align: center;
 
 }
 
 
-/* =========================================
-   CHURCH BUTTON
-========================================= */
+/* ================================
+   CHURCH LOCATION
+================================ */
 
 .church-button {
 
     position: absolute;
 
-    left: 18%;
+    left: 18.2%;
 
-    top: 51.3%;
+    top: 60.05%;
 
-    width: 27%;
+    width: 27.1%;
 
-    height: 5%;
+    height: 4.1%;
+
+    display: block;
 
     background: transparent;
 
-    border: none;
+    border: 0;
+
+    z-index: 10;
 
     cursor: pointer;
 
 }
 
 
-/* =========================================
-   HOTEL BUTTON
-========================================= */
+/* ================================
+   HOTEL LOCATION
+================================ */
 
 .hotel-button {
 
     position: absolute;
 
-    left: 55%;
+    left: 54.7%;
 
-    top: 51.3%;
+    top: 60.05%;
 
-    width: 27%;
+    width: 27.1%;
 
-    height: 5%;
+    height: 4.1%;
+
+    display: block;
 
     background: transparent;
 
-    border: none;
+    border: 0;
+
+    z-index: 10;
 
     cursor: pointer;
 
 }
 
 
-/* =========================================
-   RSVP BUTTON
-========================================= */
+/* ================================
+   RSVP
+================================ */
 
 .rsvp-button {
 
     position: absolute;
 
-    left: 36%;
+    left: 37%;
 
-    top: 80.2%;
+    top: 80.8%;
 
-    width: 28%;
+    width: 26%;
 
-    height: 5%;
+    height: 5.5%;
+
+    display: block;
 
     background: transparent;
 
-    border: none;
+    border: 0;
+
+    z-index: 10;
 
     cursor: pointer;
 
 }
 
 
-/* =========================================
+/* ================================
+   TAP TO OPEN
+================================ */
+
+/*
+   This button is positioned over the
+   TAP TO OPEN text in the artwork.
+*/
+
+.open-button {
+
+    position: absolute;
+
+    left: 35%;
+
+    top: 34.3%;
+
+    width: 30%;
+
+    height: 5%;
+
+    background: transparent;
+
+    border: 0;
+
+    z-index: 10;
+
+    cursor: pointer;
+
+}
+
+
+/* ================================
    MOBILE
-========================================= */
+================================ */
 
 @media (max-width: 600px) {
 
-    .opening {
-
-        min-height: 100vh;
-
-        height: 100vh;
-
-    }
-
-    .opening img {
-
-        width: 100%;
-
-        height: auto;
-
-    }
-
-    .open-button {
-
-        top: 74%;
-
-        left: 32%;
-
-        width: 36%;
-
-        height: 9%;
-
-    }
-
     .live-countdown {
 
-        left: 17%;
+        left: 19.3%;
 
-        width: 66%;
+        width: 61.4%;
+
+        top: 67.55%;
 
     }
 
     .count-number {
 
-        font-size: 18px;
+        font-size: 17px;
 
-        padding: 3px 1px;
+    }
+
+    .church-button {
+
+        left: 18.2%;
+
+        top: 60.05%;
+
+        width: 27.1%;
+
+        height: 4.1%;
+
+    }
+
+    .hotel-button {
+
+        left: 54.7%;
+
+        top: 60.05%;
+
+        width: 27.1%;
+
+        height: 4.1%;
+
+    }
+
+    .rsvp-button {
+
+        left: 37%;
+
+        top: 80.8%;
+
+        width: 26%;
+
+        height: 5.5%;
 
     }
 
@@ -299,49 +328,19 @@ body {
 <body>
 
 
-<div class="website">
+<div class="invitation">
 
 
-<!-- =====================================
-     OPENING
-===================================== -->
-
-<div
-    class="opening"
-    id="opening">
-
-
-    <img
-        src="wedding-design.png"
-        alt="Fady & Sarah Wedding Invitation">
-
-
-    <!-- TAP TO OPEN -->
-
-    <button
-        class="open-button"
-        onclick="openInvitation()"
-        aria-label="Open invitation">
-    </button>
-
-
-</div>
-
-
-
-<!-- =====================================
-     FULL INVITATION
-===================================== -->
-
-<div
-    class="invitation"
-    id="invitation">
-
+    <!-- =================================
+         EXACT WEDDING ARTWORK
+    ================================== -->
 
     <img
         src="wedding-design.png"
         class="invitation-image"
-        alt="Fady & Sarah Wedding Invitation">
+        alt="Fady and Sarah Wedding Invitation"
+    >
+
 
 
     <!-- =================================
@@ -350,42 +349,29 @@ body {
 
     <div class="live-countdown">
 
-
         <div
             class="count-number"
             id="days">
-
             0
-
         </div>
-
 
         <div
             class="count-number"
             id="hours">
-
             0
-
         </div>
-
 
         <div
             class="count-number"
             id="minutes">
-
             0
-
         </div>
-
 
         <div
             class="count-number"
             id="seconds">
-
             0
-
         </div>
-
 
     </div>
 
@@ -397,8 +383,11 @@ body {
 
     <a
         href="https://maps.app.goo.gl/Aog3oVXVGiwb47Cz9?g_st=iw"
+
         target="_blank"
+
         class="church-button"
+
         aria-label="Open church location">
     </a>
 
@@ -410,9 +399,12 @@ body {
 
     <a
         href="https://maps.app.goo.gl/ARrpiHBE5yC5Y9dr8?g_st=iw"
+
         target="_blank"
+
         class="hotel-button"
-        aria-label="Open hotel location">
+
+        aria-label="Open reception location">
     </a>
 
 
@@ -423,13 +415,27 @@ body {
 
     <a
         href="https://forms.gle/RbQumMt9hYUPtmz8A"
+
         target="_blank"
+
         class="rsvp-button"
+
         aria-label="RSVP">
     </a>
 
 
-</div>
+
+    <!-- =================================
+         TAP TO OPEN
+    ================================== -->
+
+    <button
+        class="open-button"
+
+        onclick="openInvitation()"
+
+        aria-label="Open invitation">
+    </button>
 
 
 </div>
@@ -439,33 +445,35 @@ body {
 <script>
 
 
-/* =========================================
-   OPEN INVITATION
-========================================= */
+/* ================================
+   TAP TO OPEN
+================================ */
 
 function openInvitation() {
 
-    document.getElementById("opening").style.display = "none";
+    /*
+       The invitation is already displayed
+       as one complete design.
 
-    document.getElementById("invitation").style.display = "block";
+       Tapping "TAP TO OPEN" simply moves
+       the guest smoothly toward the
+       wedding details.
+    */
 
-    window.scrollTo(0, 0);
+    window.scrollTo({
+
+        top: window.innerHeight * 0.35,
+
+        behavior: "smooth"
+
+    });
 
 }
 
 
-
-/* =========================================
+/* ================================
    WEDDING COUNTDOWN
-========================================= */
-
-
-/*
-   Wedding:
-   10 October 2026
-   6:00 PM
-   Cairo time (+03:00)
-*/
+================================ */
 
 const weddingDate =
     new Date(
@@ -474,7 +482,6 @@ const weddingDate =
 
 
 function updateCountdown() {
-
 
     const now =
         new Date().getTime();
@@ -531,24 +538,20 @@ function updateCountdown() {
         );
 
 
-    document.getElementById(
-        "days"
-    ).innerText = days;
+    document.getElementById("days")
+        .textContent = days;
 
 
-    document.getElementById(
-        "hours"
-    ).innerText = hours;
+    document.getElementById("hours")
+        .textContent = hours;
 
 
-    document.getElementById(
-        "minutes"
-    ).innerText = minutes;
+    document.getElementById("minutes")
+        .textContent = minutes;
 
 
-    document.getElementById(
-        "seconds"
-    ).innerText = seconds;
+    document.getElementById("seconds")
+        .textContent = seconds;
 
 }
 
@@ -559,7 +562,6 @@ setInterval(
     updateCountdown,
     1000
 );
-
 
 </script>
 
